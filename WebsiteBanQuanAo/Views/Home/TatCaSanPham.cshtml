@@ -1,0 +1,64 @@
+﻿@using WebsiteBanQuanAo.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<tbSanPham>
+@{
+    ViewBag.Title = "TatCaSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="row">
+        <div class="new-arrivals-w3agile">
+            <div class="container">
+                <h2 class="tittle">TÂT CẢ SẢN PHẨM</h2>
+                <div class="arrivals-grids">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 arrival-grid simpleCart_shelfItem" style="margin-top: 1%">
+                            <div class="grid-arr">
+                                <div class="grid-arrival">
+                                    <figure>
+                                        <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+                                            <div class="grid-img">
+                                                <img src="~/Content/Layout/images/@item.AnhMatTruoc" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="grid-img">
+                                                <img src="~/Content/Layout/images/@item.AnhMatSau" class="img-responsive" alt="">
+                                            </div>
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="ribben">
+                                    <p>@item.SanPhamMoiorCu</p>
+                                </div>
+                                @if (item.Sale == true)
+                                {
+                                    <div class="ribben1">
+                                        <p>Đang giảm giá</p>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                }
+                                <div class="block">
+                                    <div class="starbox small ghosting"> </div>
+                                </div>
+                                <div class="women">
+                                    <h6><a href="single.html">@item.TenSanPham</a></h6>
+                                    <span class="size">@item.KichThuocSanPham </span>
+                                    <p><del>@item.GiaKhuyenMai </del><em class="item_price">@item.GiaSanPham VND</em></p>
+                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="clearfix"></div>
+                    <center>
+                        @Html.PagedListPager(Model, Page => Url.Action(ViewContext.RouteData.Values["Action"].ToString(), new { Page }))
+                    </center>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
