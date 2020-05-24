@@ -180,6 +180,22 @@
     <Content Include="Content\Layout\css\style.css" />
     <Content Include="Content\Layout\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Layout\images\45.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1 %289%29.jpg" />
+    <Content Include="Content\Layout\images\AoKhoacNu1.jpg" />
     <Content Include="Content\Layout\images\arrow_left.png" />
     <Content Include="Content\Layout\images\arrow_right.png" />
     <Content Include="Content\Layout\images\b1.jpg" />
@@ -355,7 +371,7 @@
     <Content Include="Views\Home\register.cshtml" />
     <Content Include="Views\Home\checkout.cshtml" />
     <Content Include="Views\Home\TatCaSanPham.cshtml" />
-    <Content Include="Views\HienThi\TatCaSanPham.cshtml" />
+    <Content Include="Views\Home\AoKhoacNu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -41,6 +41,8 @@
           <Property Name="NgayTao" Type="datetime" />
           <Property Name="GiaKhuyenMai" Type="money" />
           <Property Name="SanPhamMoiorCu" Type="nvarchar" MaxLength="10" />
+          <Property Name="LoaiSanPham" Type="nvarchar" MaxLength="50" />
+          <Property Name="LuongMua" Type="int" />
         </EntityType>
         <Association Name="FK_tbSanPham_tbDanhMuc">
           <End Role="tbDanhMuc" Type="Self.tbDanhMuc" Multiplicity="0..1" />
@@ -114,6 +116,8 @@
           <Property Name="NgayTao" Type="DateTime" Precision="3" />
           <Property Name="GiaKhuyenMai" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="SanPhamMoiorCu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiSanPham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LuongMua" Type="Int32" />
         </EntityType>
         <Association Name="FK_tbSanPham_tbDanhMuc">
           <End Type="DatabaseBanQuanAoModel.tbDanhMuc" Role="tbDanhMuc" Multiplicity="0..1" />
@@ -156,6 +160,8 @@
           <EntitySetMapping Name="tbSanPhams">
             <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbSanPham">
               <MappingFragment StoreEntitySet="tbSanPham">
+                <ScalarProperty Name="LuongMua" ColumnName="LuongMua" />
+                <ScalarProperty Name="LoaiSanPham" ColumnName="LoaiSanPham" />
                 <ScalarProperty Name="SanPhamMoiorCu" ColumnName="SanPhamMoiorCu" />
                 <ScalarProperty Name="GiaKhuyenMai" ColumnName="GiaKhuyenMai" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />

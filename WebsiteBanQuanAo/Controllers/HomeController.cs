@@ -30,9 +30,110 @@ namespace WebsiteBanQuanAo.Controllers
         }
         public ActionResult TatCaSanPham(int ? page)
         {
-            int size = 6;
+            int size = 8;
             int number = (page ?? 1);
             return View(dt.tbSanPhams.OrderByDescending(n=>n.NgayTao).ToPagedList(number,size));
+        }
+        // Đồ nữ -----------------
+        // Áo nữ
+        public ActionResult AoKhoacNu( int ? page)
+        {
+            int size = 8;
+            int number = (page ?? 1);
+            return View( dt.tbSanPhams.OrderByDescending(n=> n.NgayTao).ToPagedList(number,size));
+        }
+        public ActionResult AoHoodiNu(int ? page)
+        {
+            int size = 8;
+            int number = (page ?? 1);
+            return View(dt.tbSanPhams.OrderByDescending(n=>n.NgayTao).ToPagedList(number,size));
+        }
+        public ActionResult AoLenNu(int ? page)
+        {
+            int size = 8;
+            int number = (page ?? 1);
+            return View( dt.tbSanPhams.OrderByDescending(n=>n.NgayTao).ToPagedList(number,size));
+        }
+        public ActionResult AoSoMiNu()
+        {
+            return View();
+        }
+        public ActionResult AoThunNu()
+        {
+            return View();
+        }
+        public ActionResult Ao2DayNu()
+        {
+            return View();
+        }
+        // Quần nữ
+        public ActionResult QuanDaiNu()
+        {
+            return View();
+        }
+        public ActionResult QuanBoNu()
+        {
+            return View();
+        }
+        public ActionResult QuanJeanNu()
+        {
+            return View();
+        }
+        public ActionResult ChanVay()
+        {
+            return View();
+        }
+        public ActionResult QuanShortNu()
+        {
+            return View();
+        }
+        // -----------------------------------------------
+        //Đồ nam
+        // Áo nam
+        public ActionResult AoThunNam()
+        {
+            return View();
+        }
+        public ActionResult AoSoMiNam()
+        {
+            return View();
+        }
+        public ActionResult AoKhoacNam()
+        {
+            return View();
+        }
+        public ActionResult AoHoodiNam()
+        {
+            return View();
+        }
+        public ActionResult AoTrumDauNam()
+        {
+            return View();
+        }
+        public ActionResult AoPolo()
+        {
+            return View();
+        }
+        // Quần nam
+        public ActionResult QuanJeanNam()
+        {
+            return View();
+        }
+        public ActionResult QuanDaiNam()
+        {
+            return View();
+        }
+        public ActionResult QuanShortNam()
+        {
+            return View();
+        }
+        public ActionResult QuanTayNam()
+        {
+            return View();
+        }
+        public ActionResult QuanBoiNam()
+        {
+            return View();
         }
         public ActionResult About()
         {
