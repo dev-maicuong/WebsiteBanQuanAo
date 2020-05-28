@@ -1,25 +1,54 @@
 ﻿@using WebsiteBanQuanAo.Models;
-@model List<tbDanhMuc>
+@model List<tbSanPham>
 
-<div class="container">
-    <h3 class="tittle1">Latest Fashion Trends</h3>
-    <div class="latest-grids">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-4 latest-grid">
-                <div class="latest-top">
-                    <img src="~/Content/Layout/images/@item.AnhDanhMuc" class="img-responsive" alt="">
-                    <div class="latest-text">
-                        <h4>@item.TenDanhMuc</h4>
+    <div class="new-arrivals-w3agile">
+        <div class="container">
+            <h2 class="tittle">Tịnh hành</h2>
+            <div class="arrivals-grids">
+                @foreach (var item in Model.Take(4))
+                {
+                    <div class="col-md-3 arrival-grid simpleCart_shelfItem">
+                        <div class="grid-arr">
+                            <div class="grid-arrival">
+                                <figure>
+                                    <a href="@Url.Action("XemChiTietSanPham","XemChiTiet", new { masanpham = item.MaSanPham})" class="new-gri">
+                                        <div class="grid-img">
+                                            <img src="~/Content/Layout/images/@item.AnhMatTruoc" class="img-responsive" alt="" style="height:300px">
+                                        </div>
+                                        <div class="grid-img">
+                                            <img src="~/Content/Layout/images/@item.AnhMatSau" class="img-responsive" alt="" style="height:300px">
+                                        </div>
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="ribben">
+                                
+                            </div>
+                            @if (item.Sale == true)
+                            {
+                                <div class="ribben1">
+                                    <p>Đang giảm giá</p>
+                                </div>
+                            }
+                            else
+                            {
+
+                            }
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="women">
+                                <h6><a href="single.html">@item.TenSanPham</a></h6>
+                                <span class="size">@item.KichThuocSanPham </span>
+                                <p><del>@item.GiaKhuyenMai </del><em class="item_price">@item.GiaSanPham VND</em></p>
+                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="latest-text2 hvr-sweep-to-top">
-                        <h4>-50%</h4>
-                    </div>
-                </div>
+                }
+                <div class="clearfix"></div>
             </div>
-        }
-        <div class="clearfix"></div>
+        </div>
     </div>
-</div>
             
         

@@ -49,7 +49,7 @@
                     <div class="ban-top">
                         <img src="~/Content/Layout/images/p1.jpg" class="img-responsive" alt="" />
                         <div class="ban-text">
-                            <h4>Men’s Clothing</h4>
+                            <a href="/Home/DoNam"><h4>Thời Trang Nam</h4></a>
                         </div>
                         <div class="ban-text2 hvr-sweep-to-top">
                             <h4>50% <span>Off/-</span></h4>
@@ -60,7 +60,7 @@
                     <div class="ban-top">
                         <img src="~/Content/Layout/images/p2.jpg" class="img-responsive" alt="" />
                         <div class="ban-text1">
-                            <h4>Women's Clothing</h4>
+                            <a href="/Home/DoNu"><h4>Thời Trang Nữ</h4></a>
                         </div>
                     </div>
                     <div class="ban-img">
@@ -88,18 +88,16 @@
         </div>
         <!--banner-bottom-->
         <!--new-arrivals-->
-        @Html.Action("SanPhamMoiNhat", "HienThi")
-        <a href="/Home/TatCaSanPham" class="btn btn-warning btn-lg btn-block" style="width:22%; margin-left:39%; color:brown;font-weight:650">Tất cả sản phẩm</a>
+        @Html.Action("SanPhamMoiNhat", "HienThi")       
         <hr />
         <!--new-arrivals-->
         <!--accessories-->
         <div class="accessories-w3l">
             <div class="container">
-                <h3 class="tittle">20% Discount on</h3>
-                <span>TRENDING DESIGNS</span>
-                <div class="button">
-                    <a href="#" class="button1"> Shop Now</a>
-                    <a href="#" class="button1"> Quick View</a>
+                <h3 class="tittle"></h3>
+                <span>LUXURY SHOP</span>
+                <div class="button">                   
+                    <a href="/Home/TatCaSanPham" class="button1"> Tất cả sản phẩm</a>
                 </div>
             </div>
         </div>
@@ -108,6 +106,7 @@
         <div class="clearfix"></div>
         <!--Products-->
         @Html.Action("Menu", "HienThi")
+        <hr />
         <!--new-arrivals-->
 
     </div>

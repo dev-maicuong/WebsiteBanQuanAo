@@ -22,7 +22,8 @@ namespace WebsiteBanQuanAo.Models
     
         public int MaDanhMuc { get; set; }
         public string TenDanhMuc { get; set; }
-        public string AnhDanhMuc { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
+        public Nullable<bool> AoOrQuan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbSanPham> tbSanPhams { get; set; }

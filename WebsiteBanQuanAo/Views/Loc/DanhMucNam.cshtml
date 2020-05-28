@@ -1,0 +1,31 @@
+﻿@using WebsiteBanQuanAo.Models;
+@model List<tbDanhMuc>
+<ul class="dropdown-menu multi-column columns-3">
+    <div class="row">
+        <div class="col-sm-3  multi-gd-img">
+            <ul class="multi-column-dropdown">
+                <h6>Áo nam</h6>
+                @foreach (var item in Model.Where(n => n.AoOrQuan == true && n.GioiTinh == true).OrderBy(n => n.TenDanhMuc))
+                {
+                    <li><a href="@Url.Action("LocTheoDanhMuc","Loc", new {madanhmuc = item.MaDanhMuc })">@item.TenDanhMuc</a></li>
+                }
+            </ul>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <ul class="multi-column-dropdown">
+                <h6>Quần nam</h6>
+                @foreach (var item in Model.Where(n => n.AoOrQuan == false && n.GioiTinh == true))
+                {
+                    <li><a href="@Url.Action("LocTheoDanhMuc","Loc", new {madanhmuc = item.MaDanhMuc })">@item.TenDanhMuc</a></li>
+                }
+            </ul>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <a href="products1.html"><img src="~/Content/Layout/images/woo3.jpg" alt=" " /></a>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <a href="products1.html"><img src="~/Content/Layout/images/woo4.jpg" alt=" " /></a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</ul>

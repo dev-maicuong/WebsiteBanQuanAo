@@ -5,10 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7533d43416e34db7bbb679b7281a0bbb" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbDanhMuc" Width="1.5" PointX="3.375" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbSanPham" Width="1.5" PointX="6.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.sysdiagram" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbSanPham" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbDanhMuc" Width="1.5" PointX="2.25" PointY="0.5" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbNguoiDung" Width="1.5" PointX="6" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

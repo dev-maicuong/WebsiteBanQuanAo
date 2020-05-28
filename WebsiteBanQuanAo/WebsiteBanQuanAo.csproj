@@ -134,8 +134,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DangNhapController.cs" />
+    <Compile Include="Controllers\DangXuatController.cs" />
+    <Compile Include="Controllers\DemSanPhamNamController.cs" />
+    <Compile Include="Controllers\DemSanPhamNuController.cs" />
     <Compile Include="Controllers\HienThiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\TaoTaiKhoanController.cs" />
+    <Compile Include="Controllers\TrangCaNhanController.cs" />
+    <Compile Include="Controllers\XemChiTietController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +169,9 @@
     <Compile Include="Models\tbDanhMuc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbNguoiDung.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tbSanPham.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -180,6 +192,38 @@
     <Content Include="Content\Layout\css\style.css" />
     <Content Include="Content\Layout\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Layout\images\45.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %2817%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1 %289%29.jpg" />
+    <Content Include="Content\Layout\images\Ao2DayNu1.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\AoHoodiNu1 %289%29.jpg" />
     <Content Include="Content\Layout\images\AoKhoacNu1 %2810%29.jpg" />
     <Content Include="Content\Layout\images\AoKhoacNu1 %2811%29.jpg" />
     <Content Include="Content\Layout\images\AoKhoacNu1 %2812%29.jpg" />
@@ -196,6 +240,60 @@
     <Content Include="Content\Layout\images\AoKhoacNu1 %288%29.jpg" />
     <Content Include="Content\Layout\images\AoKhoacNu1 %289%29.jpg" />
     <Content Include="Content\Layout\images\AoKhoacNu1.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2817%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2818%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2819%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2820%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %2821%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1 %289%29.jpg" />
+    <Content Include="Content\Layout\images\AoLenNu1.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %2817%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1 %289%29.jpg" />
+    <Content Include="Content\Layout\images\AoSoMiNu1.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %2817%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\AoThunNu1 %289%29.jpg" />
     <Content Include="Content\Layout\images\arrow_left.png" />
     <Content Include="Content\Layout\images\arrow_right.png" />
     <Content Include="Content\Layout\images\b1.jpg" />
@@ -205,6 +303,22 @@
     <Content Include="Content\Layout\images\bag.png" />
     <Content Include="Content\Layout\images\ban1.jpg" />
     <Content Include="Content\Layout\images\card.png" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2810%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2811%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2812%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2813%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2814%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2815%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2816%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %2817%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %282%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %283%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %284%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %285%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %286%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %287%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %288%29.jpg" />
+    <Content Include="Content\Layout\images\ChanVayNu1 %289%29.jpg" />
     <Content Include="Content\Layout\images\circle.png" />
     <Content Include="Content\Layout\images\close_1.png" />
     <Content Include="Content\Layout\images\do.png" />
@@ -371,10 +485,26 @@
     <Content Include="Views\Home\register.cshtml" />
     <Content Include="Views\Home\checkout.cshtml" />
     <Content Include="Views\Home\TatCaSanPham.cshtml" />
-    <Content Include="Views\Home\AoKhoacNu.cshtml" />
+    <Content Include="Views\Home\DoNam.cshtml" />
+    <Content Include="Views\Home\DoNu.cshtml" />
+    <Content Include="Views\Loc\DanhMucNu.cshtml" />
+    <Content Include="Views\Loc\LocTheoDanhMuc.cshtml" />
+    <Content Include="Views\XemChiTiet\XemChiTietSanPham.cshtml" />
+    <Content Include="Views\DangNhap\DangNhap.cshtml" />
+    <Content Include="Views\TaoTaiKhoan\Create.cshtml" />
+    <Content Include="Views\TaoTaiKhoan\Delete.cshtml" />
+    <Content Include="Views\TaoTaiKhoan\Details.cshtml" />
+    <Content Include="Views\TaoTaiKhoan\Edit.cshtml" />
+    <Content Include="Views\TaoTaiKhoan\Index.cshtml" />
+    <Content Include="Views\Loc\DanhMucNam.cshtml" />
+    <Content Include="Views\Menu\Menu.cshtml" />
+    <Content Include="Views\DemSanPhamNu\DemSanPhamNu.cshtml" />
+    <Content Include="Views\DemSanPhamNam\DemSanPhamNam.cshtml" />
+    <Content Include="Views\TrangCaNhan\TrangCaNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DangXuat\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

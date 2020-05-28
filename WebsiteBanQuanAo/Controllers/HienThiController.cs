@@ -12,7 +12,7 @@ namespace WebsiteBanQuanAo.Controllers
         DatabaseBanQuanAoEntities dt = new DatabaseBanQuanAoEntities();
         public PartialViewResult Menu()
         {
-            return PartialView(dt.tbDanhMucs.ToList());
+            return PartialView(dt.tbSanPhams.Where(n=>n.LuongMua>800).ToList());
         }
         public PartialViewResult SanPhamMoiNhat()
         {

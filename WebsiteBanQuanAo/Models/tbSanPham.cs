@@ -28,7 +28,6 @@ namespace WebsiteBanQuanAo.Models
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<decimal> GiaKhuyenMai { get; set; }
         public string SanPhamMoiorCu { get; set; }
-        public string LoaiSanPham { get; set; }
         public Nullable<int> LuongMua { get; set; }
     
         public virtual tbDanhMuc tbDanhMuc { get; set; }

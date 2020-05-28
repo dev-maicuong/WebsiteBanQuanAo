@@ -1,0 +1,32 @@
+﻿@using WebsiteBanQuanAo.Models;
+@model List<tbDanhMuc>
+<ul class="dropdown-menu multi-column columns-3">
+    <div class="row">
+        <div class="col-sm-3  multi-gd-img">
+            <ul class="multi-column-dropdown">
+                <h6>Áo nữ</h6>
+                @foreach (var item in Model.Where(n=>n.GioiTinh==false && n.AoOrQuan==true).OrderBy(n=>n.TenDanhMuc))
+                {
+                    <li><a href="@Url.Action("LocTheoDanhMuc","Loc",new { madanhmuc = item.MaDanhMuc})">@item.TenDanhMuc</a></li>
+                }
+            </ul>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <ul class="multi-column-dropdown">
+                <h6>Quần nữ</h6>
+                @foreach (var item in Model.Where(n => n.GioiTinh == false && n.AoOrQuan == false).OrderBy(n => n.TenDanhMuc))
+                {
+                    <li><a href="@Url.Action("LocTheoDanhMuc","Loc",new { madanhmuc = item.MaDanhMuc })">@item.TenDanhMuc</a></li>
+                }
+                
+            </ul>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <a href="products.html"><img src="~/Content/Layout/images/woo.jpg" alt=" " /></a>
+        </div>
+        <div class="col-sm-3  multi-gd-img">
+            <a href="products.html"><img src="~/Content/Layout/images/woo1.jpg" alt=" " /></a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</ul>
