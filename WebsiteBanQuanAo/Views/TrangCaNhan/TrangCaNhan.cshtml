@@ -8,41 +8,49 @@
 @if (sesnguoidung != null)
 {
     <center>
-        <b><i class="fa fa-user">&nbsp;</i>Ten nguoi dung: @sesnguoidung.TenNguoiDung</b>
+        
         <div class="card" style="width: 600px;">
             <img src="~/Content/Layout/images/Ao2DayNu1 (10).jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Tên</label>
-                        <input class="form-control" type="text" id="Ten" placeholder="Nhập tên" />
+                        <b><i class="fa fa-user">&nbsp;</i>Ten nguoi dung: @sesnguoidung.TenNguoiDung</b>
+                        <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email đăng nhập</label>
-                        <input type="email" class="form-control" id="Email" placeholder=" Email">
-                        <small id="emailHelp" class="form-text text-muted">Mọi thông tin sẽ gửi vào Email của bạn.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mật khẩu</label>
-                        <input type="password" class="form-control" id="MatKhau" placeholder="Mật khẩu">
+                        <label for="exampleInputEmail1">Tài khoản : @sesnguoidung.TaiKhoanNguoiDung</label>
+                        <small id="emailHelp" class="form-text text-muted"> ( Mọi thông tin sẽ gửi vào Email của bạn.)</small>
+                        <div class="clearfix"></div>
                     </div>
                     <div class="form-group form-check">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Giới tính</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Nam</option>
-                                <option>Nữ</option>
-                                <option>Khác</option>
-                            </select>
+                            <b>Giới tính :</b>
+                            <label for="exampleFormControlSelect1">@sesnguoidung.GioiTinhNguoiDung</label>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
-
+                    <div class="form-group form-check">
+                        <div class="form-group">
+                            <b>Địa chỉ :</b>
+                            <label for="exampleFormControlSelect1">@sesnguoidung.DiaChiNguoiDung</label>
+                            <br />
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="form-group form-check">
+                        <div class="form-group">
+                            <b>Số điện thoại :</b>
+                            <label for="exampleFormControlSelect1">@sesnguoidung.SDTNguoiDung</label>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Sữa thông tin</button>
-                    <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                    <a href="/DoiMatKhauKhachHang/DoiMatKhauKhachHang"><button type="submit" class="btn btn-primary">Đổi mật khẩu</button></a>
                     <button type="submit" class="btn btn-primary">Lịch sử đơn hàng</button>
                 </form>
 
             </div>
+            <br />
         </div>
     </center>
 }

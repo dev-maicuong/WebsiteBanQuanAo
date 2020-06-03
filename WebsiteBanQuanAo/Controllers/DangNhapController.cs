@@ -18,17 +18,30 @@ namespace WebsiteBanQuanAo.Controllers
         [HttpPost]
         public ActionResult DangNhap(FormCollection f)
         {
+            tbNguoiDung nd; 
             String taikhoan = f["Email"].ToString();
-            String matkhau = f["Password"].ToString();
-            tbNguoiDung nd = dt.tbNguoiDungs.SingleOrDefault(n => n.TaiKhoanNguoiDung == taikhoan && n.MatKhauNguoiDung == matkhau);
-            if( nd != null)
+            String matkhau = f["Password"].ToString();            
+             nd = dt.tbNguoiDungs.SingleOrDefault(n => n.TaiKhoanNguoiDung == taikhoan && n.MatKhauNguoiDung == matkhau);
+            if (nd != null)
             {
                 Session["NguoiDung"] = nd;
                 return Redirect("/Home/Index");
             }
+            if(taikhoan == null)
+            {
+                ViewBag.taikhoan = "Chưa nhập tài khoản";
+            }
+            if(matkhau == null)
+            {
+                ViewBag.matkhau = "Chưa nhập mật khẩu";
+            }
+            if(taikhoan == null && matkhau == null)
+            {
+                ViewBag.taikhoanmatkhau = "Chưa nhập tài khoản và mật khẩu";
+            }
             else
             {
-                ViewBag.ThongBao = "sai tai khoan hoac mat khau ";
+                ViewBag.sai = "Sai tài khoản hoặc mật khẩu";
             }
             return View();
         }

@@ -18,5 +18,8 @@ namespace WebsiteBanQuanAo.Models
         public string TaiKhoanNguoiDung { get; set; }
         public string MatKhauNguoiDung { get; set; }
         public string TenNguoiDung { get; set; }
+        public string DiaChiNguoiDung { get; set; }
+        public Nullable<int> SDTNguoiDung { get; set; }
+        public string GioiTinhNguoiDung { get; set; }
     }
 }

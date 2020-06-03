@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -14,7 +12,7 @@
     <!--banner-->
     <div class="banner1">
         <div class="container">
-            <h3><a href="index.html">Home</a> / <span>Registered</span></h3>
+            <h3><a href="index.html">Home</a> / <span>Tạo tài khoản</span></h3>
         </div>
     </div>
     <!--banner-->
@@ -24,7 +22,7 @@
         <div class="login">
             <div class="main-agileits">
                 <div class="form-w3agile form1">
-                    <h3>Register</h3>
+                    <h3>Tạo tài khoản</h3>
                     <form action="#" method="post">
                         <div class="key">
                             <i class="fa fa-user" aria-hidden="true"></i>
@@ -43,15 +41,40 @@
                         </div>
                         <div class="key">
                             <i class="fa fa-lock" aria-hidden="true"></i>
-                            <input type="password" value="Confirm Password" name="MatKhauNguoiDung" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="">
+                            <input type="password" value="Confirm Password" name="NhapLaiMatKhau" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="">
                             <div class="clearfix"></div>
                         </div>
-                        <input type="submit" value="Submit">
+                        <div>
+                            <i>Địa chỉ người dùng</i>
+                            <input type="text" name="DiaChiNguoiDung" class="clearfix">
+                        </div>
+                        <div >
+                            <i >Số điện thoại</i>
+                            <input type="number" value="Số điện thoại người dùng" name="SDTNguoiDung">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div >
+                            <i>Nam</i>
+                            <input type="radio" value="Nam" name="GioiTinhNguoiDung">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div >
+                            <i>Nữ</i>
+                            <input type="radio" value="Nữ" name="GioiTinhNguoiDung">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div >
+                            <i>Khác</i>
+                            <input type="radio" value="Khác" name="GioiTinhNguoiDung" >
+                            <div class="clearfix"></div>
+                        </div>
+                        <input type="submit" value="Đăng ký">
                     </form>
+                    @ViewBag.SaiMatKhauNhapLai
                 </div>
 
             </div>
-        </div>
+        </div>        
         <!--login-->
     </div>
 }

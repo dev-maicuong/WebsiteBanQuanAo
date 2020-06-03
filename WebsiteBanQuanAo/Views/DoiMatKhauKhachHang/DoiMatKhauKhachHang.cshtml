@@ -1,0 +1,19 @@
+﻿@model WebsiteBanQuanAo.Models.tbNguoiDung
+@{
+    ViewBag.Title = "DoiMatKhauKhachHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DoiMatKhauKhachHang</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <input type="text" name="TaiKhoanNguoiDung"  required="Tài khoản"/>
+        <input type="password" name="MatKhauNguoiDung" required="Mật Khẩu" />
+        <input type="button" name="hoanthanh" value="Oke" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

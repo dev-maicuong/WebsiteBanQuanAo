@@ -10,115 +10,112 @@ using WebsiteBanQuanAo.Models;
 
 namespace WebsiteBanQuanAo.Controllers
 {
-    public class TaoTaiKhoanController : Controller
+    public class tbSanPhamsController : Controller
     {
         private DatabaseBanQuanAoEntities db = new DatabaseBanQuanAoEntities();
 
-        // GET: TaoTaiKhoan
+        // GET: tbSanPhams
         public ActionResult Index()
         {
-            return View(db.tbNguoiDungs.ToList());
+            var tbSanPhams = db.tbSanPhams.Include(t => t.tbDanhMuc);
+            return View(tbSanPhams.ToList());
         }
 
-        // GET: TaoTaiKhoan/Details/5
+        // GET: tbSanPhams/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbNguoiDung tbNguoiDung = db.tbNguoiDungs.Find(id);
-            if (tbNguoiDung == null)
+            tbSanPham tbSanPham = db.tbSanPhams.Find(id);
+            if (tbSanPham == null)
             {
                 return HttpNotFound();
             }
-            return View(tbNguoiDung);
+            return View(tbSanPham);
         }
 
-        // GET: TaoTaiKhoan/Create
+        // GET: tbSanPhams/Create
         public ActionResult Create()
         {
+            ViewBag.MaDanhMuc = new SelectList(db.tbDanhMucs, "MaDanhMuc", "TenDanhMuc");
             return View();
         }
 
-        // POST: TaoTaiKhoan/Create
+        // POST: tbSanPhams/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FormCollection f, [Bind(Include = "MaNguoiDung,TaiKhoanNguoiDung,MatKhauNguoiDung,TenNguoiDung,DiaChiNguoiDung,SDTNguoiDung,GioiTinhNguoiDung")] tbNguoiDung tbNguoiDung)
-        {          
-            String nhaplaimatkhau = f["NhapLaiMatKhau"].ToString();
-            String matkhau = f["MatKhauNguoiDung"].ToString();
-            if(matkhau == nhaplaimatkhau)
+        public ActionResult Create([Bind(Include = "MaSanPham,TenSanPham,AnhMatTruoc,AnhMatSau,KichThuocSanPham,LuotXem,GiaSanPham,Sale,GioiTinh,MoTaSanPham,MaDanhMuc,NgayTao,GiaKhuyenMai,SanPhamMoiorCu,LuongMua,LoaiSanPham")] tbSanPham tbSanPham)
+        {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    db.tbNguoiDungs.Add(tbNguoiDung);
-                    db.SaveChanges();
-                    return Redirect("/DangNhap/DangNhap");
-                }
+                db.tbSanPhams.Add(tbSanPham);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            else
-            {
-                ViewBag.SaiMatKhauNhapLai= "Sai mật khẩu nhập lại" ;
-            }
-            return View(tbNguoiDung);
+
+            ViewBag.MaDanhMuc = new SelectList(db.tbDanhMucs, "MaDanhMuc", "TenDanhMuc", tbSanPham.MaDanhMuc);
+            return View(tbSanPham);
         }
 
-        // GET: TaoTaiKhoan/Edit/5
+        // GET: tbSanPhams/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbNguoiDung tbNguoiDung = db.tbNguoiDungs.Find(id);
-            if (tbNguoiDung == null)
+            tbSanPham tbSanPham = db.tbSanPhams.Find(id);
+            if (tbSanPham == null)
             {
                 return HttpNotFound();
             }
-            return View(tbNguoiDung);
+            ViewBag.MaDanhMuc = new SelectList(db.tbDanhMucs, "MaDanhMuc", "TenDanhMuc", tbSanPham.MaDanhMuc);
+            return View(tbSanPham);
         }
 
-        // POST: TaoTaiKhoan/Edit/5
+        // POST: tbSanPhams/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaNguoiDung,TaiKhoanNguoiDung,MatKhauNguoiDung,TenNguoiDung")] tbNguoiDung tbNguoiDung)
+        public ActionResult Edit([Bind(Include = "MaSanPham,TenSanPham,AnhMatTruoc,AnhMatSau,KichThuocSanPham,LuotXem,GiaSanPham,Sale,GioiTinh,MoTaSanPham,MaDanhMuc,NgayTao,GiaKhuyenMai,SanPhamMoiorCu,LuongMua,LoaiSanPham")] tbSanPham tbSanPham)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tbNguoiDung).State = EntityState.Modified;
+                db.Entry(tbSanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tbNguoiDung);
+            ViewBag.MaDanhMuc = new SelectList(db.tbDanhMucs, "MaDanhMuc", "TenDanhMuc", tbSanPham.MaDanhMuc);
+            return View(tbSanPham);
         }
 
-        // GET: TaoTaiKhoan/Delete/5
+        // GET: tbSanPhams/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbNguoiDung tbNguoiDung = db.tbNguoiDungs.Find(id);
-            if (tbNguoiDung == null)
+            tbSanPham tbSanPham = db.tbSanPhams.Find(id);
+            if (tbSanPham == null)
             {
                 return HttpNotFound();
             }
-            return View(tbNguoiDung);
+            return View(tbSanPham);
         }
 
-        // POST: TaoTaiKhoan/Delete/5
+        // POST: tbSanPhams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tbNguoiDung tbNguoiDung = db.tbNguoiDungs.Find(id);
-            db.tbNguoiDungs.Remove(tbNguoiDung);
+            tbSanPham tbSanPham = db.tbSanPhams.Find(id);
+            db.tbSanPhams.Remove(tbSanPham);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

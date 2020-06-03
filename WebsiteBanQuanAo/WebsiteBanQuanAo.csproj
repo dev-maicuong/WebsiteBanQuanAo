@@ -138,16 +138,23 @@
     <Compile Include="Controllers\DangXuatController.cs" />
     <Compile Include="Controllers\DemSanPhamNamController.cs" />
     <Compile Include="Controllers\DemSanPhamNuController.cs" />
+    <Compile Include="Controllers\DoiMatKhauKhachHangController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HienThiAoController.cs" />
     <Compile Include="Controllers\HienThiController.cs" />
+    <Compile Include="Controllers\HienThiQuanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\SanPhamDuocMuaNhieuNhatController.cs" />
     <Compile Include="Controllers\TaoTaiKhoanController.cs" />
+    <Compile Include="Controllers\tbSanPhamsController.cs" />
     <Compile Include="Controllers\TrangCaNhanController.cs" />
     <Compile Include="Controllers\XemChiTietController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClassGioHangTamThoi.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -501,6 +508,16 @@
     <Content Include="Views\DemSanPhamNu\DemSanPhamNu.cshtml" />
     <Content Include="Views\DemSanPhamNam\DemSanPhamNam.cshtml" />
     <Content Include="Views\TrangCaNhan\TrangCaNhan.cshtml" />
+    <Content Include="Views\HienThiAo\HienThiAo.cshtml" />
+    <Content Include="Views\HienThiQuan\HienThiQuan.cshtml" />
+    <Content Include="Views\DoiMatKhauKhachHang\DoiMatKhauKhachHang.cshtml" />
+    <Content Include="Views\tbSanPhams\Create.cshtml" />
+    <Content Include="Views\tbSanPhams\Delete.cshtml" />
+    <Content Include="Views\tbSanPhams\Details.cshtml" />
+    <Content Include="Views\tbSanPhams\Edit.cshtml" />
+    <Content Include="Views\tbSanPhams\Index.cshtml" />
+    <Content Include="Views\SanPhamDuocMuaNhieuNhat\AoNuDuocMuaNhieuNhat.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

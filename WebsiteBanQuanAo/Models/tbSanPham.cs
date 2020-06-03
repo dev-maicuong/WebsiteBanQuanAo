@@ -29,6 +29,7 @@ namespace WebsiteBanQuanAo.Models
         public Nullable<decimal> GiaKhuyenMai { get; set; }
         public string SanPhamMoiorCu { get; set; }
         public Nullable<int> LuongMua { get; set; }
+        public Nullable<bool> LoaiSanPham { get; set; }
     
         public virtual tbDanhMuc tbDanhMuc { get; set; }
     }

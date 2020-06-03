@@ -17,7 +17,7 @@
     <div class="login">
         <div class="main-agileits">
             <div class="form-w3agile">
-                <h3>Login To New Shop</h3>
+                <h3>Đăng nhập tới Luxyry</h3>
                 <form action="@Url.Action("DangNhap","DangNhap")" method="post">
                     <div class="key">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -31,7 +31,10 @@
                     </div>
                     <input type="submit" value="Login">
                 </form>
-                @ViewBag.ThongBao
+                @ViewBag.taikhoan
+                @ViewBag.matkhau
+                @ViewBag.taikhoanmatkhau
+                @ViewBag.sai
             </div>
             <div class="forg">
                 <a href="#" class="forg-left">Forgot Password</a>
