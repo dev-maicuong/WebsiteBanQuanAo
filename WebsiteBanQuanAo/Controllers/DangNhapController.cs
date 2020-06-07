@@ -25,6 +25,7 @@ namespace WebsiteBanQuanAo.Controllers
             if (nd != null)
             {
                 Session["NguoiDung"] = nd;
+                Session["MaNguoiDung"] = nd.MaNguoiDung;
                 return Redirect("/Home/Index");
             }
             if(taikhoan == null)

@@ -14,6 +14,12 @@ namespace WebsiteBanQuanAo.Models
     
     public partial class tbSanPham
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbSanPham()
+        {
+            this.CTDatHangs = new HashSet<CTDatHang>();
+        }
+    
         public int MaSanPham { get; set; }
         public string TenSanPham { get; set; }
         public string AnhMatTruoc { get; set; }
@@ -31,6 +37,8 @@ namespace WebsiteBanQuanAo.Models
         public Nullable<int> LuongMua { get; set; }
         public Nullable<bool> LoaiSanPham { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDatHang> CTDatHangs { get; set; }
         public virtual tbDanhMuc tbDanhMuc { get; set; }
     }
 }

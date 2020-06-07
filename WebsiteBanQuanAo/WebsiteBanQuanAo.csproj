@@ -149,12 +149,17 @@
     <Compile Include="Controllers\SanPhamDuocMuaNhieuNhatController.cs" />
     <Compile Include="Controllers\TaoTaiKhoanController.cs" />
     <Compile Include="Controllers\tbSanPhamsController.cs" />
+    <Compile Include="Controllers\ThanhToanController.cs" />
+    <Compile Include="Controllers\ThongTinThanhToansController.cs" />
     <Compile Include="Controllers\TrangCaNhanController.cs" />
     <Compile Include="Controllers\XemChiTietController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ClassGioHangTamThoi.cs" />
+    <Compile Include="Models\CTDatHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +185,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbSanPham.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThongTinThanhToan.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -438,8 +446,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -518,6 +526,17 @@
     <Content Include="Views\tbSanPhams\Index.cshtml" />
     <Content Include="Views\SanPhamDuocMuaNhieuNhat\AoNuDuocMuaNhieuNhat.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\HienThi\SanPhamLienQuan.cshtml" />
+    <Content Include="Views\HienThi\GiamGiaManh.cshtml" />
+    <Content Include="Views\HienThi\SanPhamMoi.cshtml" />
+    <Content Include="Views\ThanhToan\ThongTinThanhToan.cshtml" />
+    <Content Include="Views\ThongTinThanhToans\Create.cshtml" />
+    <Content Include="Views\ThongTinThanhToans\Delete.cshtml" />
+    <Content Include="Views\ThongTinThanhToans\Details.cshtml" />
+    <Content Include="Views\ThongTinThanhToans\Edit.cshtml" />
+    <Content Include="Views\ThongTinThanhToans\Index.cshtml" />
+    <Content Include="Views\GioHang\GioHangKeThua.cshtml" />
+    <Content Include="Views\ThanhToan\XacNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

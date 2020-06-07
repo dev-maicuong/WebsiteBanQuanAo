@@ -1,0 +1,80 @@
+﻿@model WebsiteBanQuanAo.Models.ThongTinThanhToan
+
+@{
+    ViewBag.Title = "ThongTinThanhToan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .row{
+        margin-left: 25px;
+        margin-right: -157px;
+    }
+</style>
+<div class="row container">
+    <div class="">
+        @using (Html.BeginForm("ThongTinThanhToan", "ThanhToan", new { @enctype = "multiple/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.MaNguoiDung)
+                @Html.HiddenFor(model => model.MaTTTT)
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-user">&nbsp;</i>Tên người dùng</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.TenNguoiDung" name="TenNguoiDung" class="form-control" style="width: 100%;" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-adjust">&nbsp;</i>Địa chỉ:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.DiaChiNguoiDung" name="DiaChiNguoiDung" class="form-control" style="width: 100%;" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-phone">&nbsp;</i>Số điện thoại:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.SDTNguoiDung" name="SDTNguoiDung" class="form-control" style="width: 100%" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-users">&nbsp;</i>Giới tính:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.GioiTinhNguoiDung" name="GioiTinhNguoiDung" class="form-control" style="width: 100%" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-sort-numeric-asc">&nbsp;</i>Số lượng:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.SoLuong" name="SoLuong" class="form-control" style="width: 100%" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-phone">&nbsp;</i>Tổng tiền:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.TongTien" name="TongTien" class="form-control" style="width: 100%" />
+                                </p>
+                                <br />
+                                <h5 class="card-title" style="font-weight: bold; color: black; font-size: 15px"><i class="fa fa-mail-forward">&nbsp;</i>Email:</h5>
+                                <p class="card-text">
+                                    <input type="text" value="@Model.TaiKhoanNguoiDung" name="TaiKhoanNguoiDung" class="form-control" style="width: 100%" />
+                                </p>
+                                <br />
+                                <br />
+                                <button type="submit" class="btn btn-danger"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="col=md-6">
+                            <iframe src="/GioHang/GioHangKeThua" style="width:100%;height:400px">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

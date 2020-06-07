@@ -1,11 +1,8 @@
 ﻿@using WebsiteBanQuanAo.Models;
 @model List<ClassGioHangTamThoi>
 @{
-    ViewBag.Title = "GioHang";
-    Layout = "~/Views/Shared/_Layout.cshtml";
     tbNguoiDung nd = (tbNguoiDung)Session["NguoiDung"];
 }
-
 @if (Model == null || Model.Count == 0)
 {
     <div class="row">
@@ -118,4 +115,3 @@ else
         </div>
     </div>
 }
-

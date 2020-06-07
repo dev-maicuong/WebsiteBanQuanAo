@@ -1,0 +1,91 @@
+﻿@model WebsiteBanQuanAo.Models.ThongTinThanhToan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThongTinThanhToan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNguoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNguoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTNguoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiTinhNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinhNguoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiKhoanNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoanNguoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayNhanSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhanSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbNguoiDung.TaiKhoanNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbNguoiDung.TaiKhoanNguoiDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTTTT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

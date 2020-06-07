@@ -69,5 +69,10 @@ namespace WebsiteBanQuanAo.Controllers
             }
             return Redirect(Request.UrlReferrer.ToString());
         }
+        public PartialViewResult GioHangKeThua()
+        {
+            List<ClassGioHangTamThoi> GioHangTamThoi = Session["GioHangTamThoi"] as List<ClassGioHangTamThoi>;
+            return PartialView(GioHangTamThoi);
+        }
     }
 }

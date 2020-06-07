@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DatabaseBanQuanAoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DatabaseBanQuanAoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTDatHang">
+          <Key>
+            <PropertyRef Name="MaCTDatHang" />
+          </Key>
+          <Property Name="MaCTDatHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaSanPham" Type="int" />
+          <Property Name="MaTTTT" Type="int" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -44,7 +52,7 @@
           <Property Name="TenSanPham" Type="nvarchar" MaxLength="100" />
           <Property Name="AnhMatTruoc" Type="varchar(max)" />
           <Property Name="AnhMatSau" Type="varchar(max)" />
-          <Property Name="KichThuocSanPham" Type="varchar" MaxLength="5" />
+          <Property Name="KichThuocSanPham" Type="varchar" MaxLength="15" />
           <Property Name="LuotXem" Type="int" />
           <Property Name="GiaSanPham" Type="money" />
           <Property Name="Sale" Type="bit" />
@@ -57,6 +65,45 @@
           <Property Name="LuongMua" Type="int" />
           <Property Name="LoaiSanPham" Type="bit" />
         </EntityType>
+        <EntityType Name="ThongTinThanhToan">
+          <Key>
+            <PropertyRef Name="MaTTTT" />
+          </Key>
+          <Property Name="MaTTTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaNguoiDung" Type="int" />
+          <Property Name="TenNguoiDung" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChiNguoiDung" Type="nvarchar" MaxLength="100" />
+          <Property Name="SDTNguoiDung" Type="int" />
+          <Property Name="GioiTinhNguoiDung" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="TongTien" Type="money" />
+          <Property Name="TaiKhoanNguoiDung" Type="varchar" MaxLength="50" />
+          <Property Name="NgayNhanSanPham" Type="date" />
+        </EntityType>
+        <Association Name="FK_CTDatHang_tbSanPham">
+          <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="0..1" />
+          <End Role="CTDatHang" Type="Self.CTDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSanPham">
+              <PropertyRef Name="MaSanPham" />
+            </Principal>
+            <Dependent Role="CTDatHang">
+              <PropertyRef Name="MaSanPham" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHang_ThongTinThanhToan">
+          <End Role="ThongTinThanhToan" Type="Self.ThongTinThanhToan" Multiplicity="0..1" />
+          <End Role="CTDatHang" Type="Self.CTDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThongTinThanhToan">
+              <PropertyRef Name="MaTTTT" />
+            </Principal>
+            <Dependent Role="CTDatHang">
+              <PropertyRef Name="MaTTTT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tbSanPham_tbDanhMuc">
           <End Role="tbDanhMuc" Type="Self.tbDanhMuc" Multiplicity="0..1" />
           <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
@@ -69,20 +116,57 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ThongTinThanhToan_tbNguoiDung">
+          <End Role="tbNguoiDung" Type="Self.tbNguoiDung" Multiplicity="0..1" />
+          <End Role="ThongTinThanhToan" Type="Self.ThongTinThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbNguoiDung">
+              <PropertyRef Name="MaNguoiDung" />
+            </Principal>
+            <Dependent Role="ThongTinThanhToan">
+              <PropertyRef Name="MaNguoiDung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DatabaseBanQuanAoModelStoreContainer">
+          <EntitySet Name="CTDatHang" EntityType="Self.CTDatHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbDanhMuc" EntityType="Self.tbDanhMuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbNguoiDung" EntityType="Self.tbNguoiDung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbSanPham" EntityType="Self.tbSanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinThanhToan" EntityType="Self.ThongTinThanhToan" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CTDatHang_tbSanPham" Association="Self.FK_CTDatHang_tbSanPham">
+            <End Role="tbSanPham" EntitySet="tbSanPham" />
+            <End Role="CTDatHang" EntitySet="CTDatHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHang_ThongTinThanhToan" Association="Self.FK_CTDatHang_ThongTinThanhToan">
+            <End Role="ThongTinThanhToan" EntitySet="ThongTinThanhToan" />
+            <End Role="CTDatHang" EntitySet="CTDatHang" />
+          </AssociationSet>
           <AssociationSet Name="FK_tbSanPham_tbDanhMuc" Association="Self.FK_tbSanPham_tbDanhMuc">
             <End Role="tbDanhMuc" EntitySet="tbDanhMuc" />
             <End Role="tbSanPham" EntitySet="tbSanPham" />
           </AssociationSet>
+          <AssociationSet Name="FK_ThongTinThanhToan_tbNguoiDung" Association="Self.FK_ThongTinThanhToan_tbNguoiDung">
+            <End Role="tbNguoiDung" EntitySet="tbNguoiDung" />
+            <End Role="ThongTinThanhToan" EntitySet="ThongTinThanhToan" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseBanQuanAoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CTDatHang">
+          <Key>
+            <PropertyRef Name="MaCTDatHang" />
+          </Key>
+          <Property Name="MaCTDatHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaSanPham" Type="Int32" />
+          <Property Name="MaTTTT" Type="Int32" />
+          <NavigationProperty Name="tbSanPham" Relationship="Self.FK_CTDatHang_tbSanPham" FromRole="CTDatHang" ToRole="tbSanPham" />
+          <NavigationProperty Name="ThongTinThanhToan" Relationship="Self.FK_CTDatHang_ThongTinThanhToan" FromRole="CTDatHang" ToRole="ThongTinThanhToan" />
+        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -93,38 +177,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityContainer Name="DatabaseBanQuanAoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="tbSanPhams" EntityType="DatabaseBanQuanAoModel.tbSanPham" />
-          <EntitySet Name="tbDanhMucs" EntityType="DatabaseBanQuanAoModel.tbDanhMuc" />
-          <AssociationSet Name="FK_tbSanPham_tbDanhMuc" Association="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc">
-            <End Role="tbDanhMuc" EntitySet="tbDanhMucs" />
-            <End Role="tbSanPham" EntitySet="tbSanPhams" />
-          </AssociationSet>
-          <EntitySet Name="tbNguoiDungs" EntityType="DatabaseBanQuanAoModel.tbNguoiDung" />
-        </EntityContainer>
-        <EntityType Name="tbSanPham">
-          <Key>
-            <PropertyRef Name="MaSanPham" />
-          </Key>
-          <Property Name="MaSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenSanPham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="AnhMatTruoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="AnhMatSau" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="KichThuocSanPham" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LuotXem" Type="Int32" />
-          <Property Name="GiaSanPham" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Sale" Type="Boolean" />
-          <Property Name="GioiTinh" Type="Int32" />
-          <Property Name="MoTaSanPham" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="MaDanhMuc" Type="Int32" />
-          <Property Name="NgayTao" Type="DateTime" Precision="3" />
-          <Property Name="GiaKhuyenMai" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="SanPhamMoiorCu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LuongMua" Type="Int32" />
-          <NavigationProperty Name="tbDanhMuc" Relationship="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc" FromRole="tbSanPham" ToRole="tbDanhMuc" />
-          <Property Name="LoaiSanPham" Type="Boolean" />
-        </EntityType>
         <EntityType Name="tbDanhMuc">
           <Key>
             <PropertyRef Name="MaDanhMuc" />
@@ -132,21 +184,9 @@
           <Property Name="MaDanhMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDanhMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="GioiTinh" Type="Boolean" />
-          <NavigationProperty Name="tbSanPhams" Relationship="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc" FromRole="tbDanhMuc" ToRole="tbSanPham" />
           <Property Name="AoOrQuan" Type="Boolean" />
+          <NavigationProperty Name="tbSanPhams" Relationship="Self.FK_tbSanPham_tbDanhMuc" FromRole="tbDanhMuc" ToRole="tbSanPham" />
         </EntityType>
-        <Association Name="FK_tbSanPham_tbDanhMuc">
-          <End Type="DatabaseBanQuanAoModel.tbDanhMuc" Role="tbDanhMuc" Multiplicity="0..1" />
-          <End Type="DatabaseBanQuanAoModel.tbSanPham" Role="tbSanPham" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbDanhMuc">
-              <PropertyRef Name="MaDanhMuc" />
-            </Principal>
-            <Dependent Role="tbSanPham">
-              <PropertyRef Name="MaDanhMuc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tbNguoiDung">
           <Key>
             <PropertyRef Name="MaNguoiDung" />
@@ -158,13 +198,135 @@
           <Property Name="DiaChiNguoiDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SDTNguoiDung" Type="Int32" />
           <Property Name="GioiTinhNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ThongTinThanhToans" Relationship="Self.FK_ThongTinThanhToan_tbNguoiDung" FromRole="tbNguoiDung" ToRole="ThongTinThanhToan" />
         </EntityType>
+        <EntityType Name="tbSanPham">
+          <Key>
+            <PropertyRef Name="MaSanPham" />
+          </Key>
+          <Property Name="MaSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenSanPham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AnhMatTruoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AnhMatSau" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KichThuocSanPham" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LuotXem" Type="Int32" />
+          <Property Name="GiaSanPham" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sale" Type="Boolean" />
+          <Property Name="GioiTinh" Type="Int32" />
+          <Property Name="MoTaSanPham" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MaDanhMuc" Type="Int32" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="GiaKhuyenMai" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SanPhamMoiorCu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LuongMua" Type="Int32" />
+          <Property Name="LoaiSanPham" Type="Boolean" />
+          <NavigationProperty Name="CTDatHangs" Relationship="Self.FK_CTDatHang_tbSanPham" FromRole="tbSanPham" ToRole="CTDatHang" />
+          <NavigationProperty Name="tbDanhMuc" Relationship="Self.FK_tbSanPham_tbDanhMuc" FromRole="tbSanPham" ToRole="tbDanhMuc" />
+        </EntityType>
+        <EntityType Name="ThongTinThanhToan">
+          <Key>
+            <PropertyRef Name="MaTTTT" />
+          </Key>
+          <Property Name="MaTTTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaNguoiDung" Type="Int32" />
+          <Property Name="TenNguoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiNguoiDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDTNguoiDung" Type="Int32" />
+          <Property Name="GioiTinhNguoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaiKhoanNguoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NgayNhanSanPham" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CTDatHangs" Relationship="Self.FK_CTDatHang_ThongTinThanhToan" FromRole="ThongTinThanhToan" ToRole="CTDatHang" />
+          <NavigationProperty Name="tbNguoiDung" Relationship="Self.FK_ThongTinThanhToan_tbNguoiDung" FromRole="ThongTinThanhToan" ToRole="tbNguoiDung" />
+        </EntityType>
+        <Association Name="FK_CTDatHang_tbSanPham">
+          <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="0..1" />
+          <End Role="CTDatHang" Type="Self.CTDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSanPham">
+              <PropertyRef Name="MaSanPham" />
+            </Principal>
+            <Dependent Role="CTDatHang">
+              <PropertyRef Name="MaSanPham" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHang_ThongTinThanhToan">
+          <End Role="ThongTinThanhToan" Type="Self.ThongTinThanhToan" Multiplicity="0..1" />
+          <End Role="CTDatHang" Type="Self.CTDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThongTinThanhToan">
+              <PropertyRef Name="MaTTTT" />
+            </Principal>
+            <Dependent Role="CTDatHang">
+              <PropertyRef Name="MaTTTT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSanPham_tbDanhMuc">
+          <End Role="tbDanhMuc" Type="Self.tbDanhMuc" Multiplicity="0..1" />
+          <End Role="tbSanPham" Type="Self.tbSanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDanhMuc">
+              <PropertyRef Name="MaDanhMuc" />
+            </Principal>
+            <Dependent Role="tbSanPham">
+              <PropertyRef Name="MaDanhMuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongTinThanhToan_tbNguoiDung">
+          <End Role="tbNguoiDung" Type="Self.tbNguoiDung" Multiplicity="0..1" />
+          <End Role="ThongTinThanhToan" Type="Self.ThongTinThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbNguoiDung">
+              <PropertyRef Name="MaNguoiDung" />
+            </Principal>
+            <Dependent Role="ThongTinThanhToan">
+              <PropertyRef Name="MaNguoiDung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseBanQuanAoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CTDatHangs" EntityType="Self.CTDatHang" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbDanhMucs" EntityType="Self.tbDanhMuc" />
+          <EntitySet Name="tbNguoiDungs" EntityType="Self.tbNguoiDung" />
+          <EntitySet Name="tbSanPhams" EntityType="Self.tbSanPham" />
+          <EntitySet Name="ThongTinThanhToans" EntityType="Self.ThongTinThanhToan" />
+          <AssociationSet Name="FK_CTDatHang_tbSanPham" Association="Self.FK_CTDatHang_tbSanPham">
+            <End Role="tbSanPham" EntitySet="tbSanPhams" />
+            <End Role="CTDatHang" EntitySet="CTDatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHang_ThongTinThanhToan" Association="Self.FK_CTDatHang_ThongTinThanhToan">
+            <End Role="ThongTinThanhToan" EntitySet="ThongTinThanhToans" />
+            <End Role="CTDatHang" EntitySet="CTDatHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSanPham_tbDanhMuc" Association="Self.FK_tbSanPham_tbDanhMuc">
+            <End Role="tbDanhMuc" EntitySet="tbDanhMucs" />
+            <End Role="tbSanPham" EntitySet="tbSanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongTinThanhToan_tbNguoiDung" Association="Self.FK_ThongTinThanhToan_tbNguoiDung">
+            <End Role="tbNguoiDung" EntitySet="tbNguoiDungs" />
+            <End Role="ThongTinThanhToan" EntitySet="ThongTinThanhToans" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseBanQuanAoModelStoreContainer" CdmEntityContainer="DatabaseBanQuanAoEntities">
+          <EntitySetMapping Name="CTDatHangs">
+            <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.CTDatHang">
+              <MappingFragment StoreEntitySet="CTDatHang">
+                <ScalarProperty Name="MaCTDatHang" ColumnName="MaCTDatHang" />
+                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+                <ScalarProperty Name="MaTTTT" ColumnName="MaTTTT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -176,48 +338,64 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbSanPhams">
-            <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbSanPham">
-              <MappingFragment StoreEntitySet="tbSanPham">
-                <ScalarProperty Name="LoaiSanPham" ColumnName="LoaiSanPham" />
-                <ScalarProperty Name="LuongMua" ColumnName="LuongMua" />
-                <ScalarProperty Name="SanPhamMoiorCu" ColumnName="SanPhamMoiorCu" />
-                <ScalarProperty Name="GiaKhuyenMai" ColumnName="GiaKhuyenMai" />
-                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
-                <ScalarProperty Name="MoTaSanPham" ColumnName="MoTaSanPham" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="Sale" ColumnName="Sale" />
-                <ScalarProperty Name="GiaSanPham" ColumnName="GiaSanPham" />
-                <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
-                <ScalarProperty Name="KichThuocSanPham" ColumnName="KichThuocSanPham" />
-                <ScalarProperty Name="AnhMatSau" ColumnName="AnhMatSau" />
-                <ScalarProperty Name="AnhMatTruoc" ColumnName="AnhMatTruoc" />
-                <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
-                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbDanhMucs">
             <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbDanhMuc">
               <MappingFragment StoreEntitySet="tbDanhMuc">
-                <ScalarProperty Name="AoOrQuan" ColumnName="AoOrQuan" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
                 <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
+                <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="AoOrQuan" ColumnName="AoOrQuan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbNguoiDungs">
             <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbNguoiDung">
               <MappingFragment StoreEntitySet="tbNguoiDung">
-                <ScalarProperty Name="GioiTinhNguoiDung" ColumnName="GioiTinhNguoiDung" />
-                <ScalarProperty Name="SDTNguoiDung" ColumnName="SDTNguoiDung" />
-                <ScalarProperty Name="DiaChiNguoiDung" ColumnName="DiaChiNguoiDung" />
-                <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
-                <ScalarProperty Name="MatKhauNguoiDung" ColumnName="MatKhauNguoiDung" />
-                <ScalarProperty Name="TaiKhoanNguoiDung" ColumnName="TaiKhoanNguoiDung" />
                 <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+                <ScalarProperty Name="TaiKhoanNguoiDung" ColumnName="TaiKhoanNguoiDung" />
+                <ScalarProperty Name="MatKhauNguoiDung" ColumnName="MatKhauNguoiDung" />
+                <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+                <ScalarProperty Name="DiaChiNguoiDung" ColumnName="DiaChiNguoiDung" />
+                <ScalarProperty Name="SDTNguoiDung" ColumnName="SDTNguoiDung" />
+                <ScalarProperty Name="GioiTinhNguoiDung" ColumnName="GioiTinhNguoiDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSanPhams">
+            <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbSanPham">
+              <MappingFragment StoreEntitySet="tbSanPham">
+                <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+                <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+                <ScalarProperty Name="AnhMatTruoc" ColumnName="AnhMatTruoc" />
+                <ScalarProperty Name="AnhMatSau" ColumnName="AnhMatSau" />
+                <ScalarProperty Name="KichThuocSanPham" ColumnName="KichThuocSanPham" />
+                <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+                <ScalarProperty Name="GiaSanPham" ColumnName="GiaSanPham" />
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="MoTaSanPham" ColumnName="MoTaSanPham" />
+                <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="GiaKhuyenMai" ColumnName="GiaKhuyenMai" />
+                <ScalarProperty Name="SanPhamMoiorCu" ColumnName="SanPhamMoiorCu" />
+                <ScalarProperty Name="LuongMua" ColumnName="LuongMua" />
+                <ScalarProperty Name="LoaiSanPham" ColumnName="LoaiSanPham" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinThanhToans">
+            <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.ThongTinThanhToan">
+              <MappingFragment StoreEntitySet="ThongTinThanhToan">
+                <ScalarProperty Name="MaTTTT" ColumnName="MaTTTT" />
+                <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+                <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+                <ScalarProperty Name="DiaChiNguoiDung" ColumnName="DiaChiNguoiDung" />
+                <ScalarProperty Name="SDTNguoiDung" ColumnName="SDTNguoiDung" />
+                <ScalarProperty Name="GioiTinhNguoiDung" ColumnName="GioiTinhNguoiDung" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TaiKhoanNguoiDung" ColumnName="TaiKhoanNguoiDung" />
+                <ScalarProperty Name="NgayNhanSanPham" ColumnName="NgayNhanSanPham" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

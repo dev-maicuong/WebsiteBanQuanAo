@@ -18,5 +18,17 @@ namespace WebsiteBanQuanAo.Controllers
         {
             return PartialView(dt.tbSanPhams.ToList());
         }
+        public PartialViewResult SanPhamLienQuan(Boolean loaisanpham)
+        {
+            return PartialView(dt.tbSanPhams.Where(n=>n.LoaiSanPham == loaisanpham).OrderByDescending(n=>n.NgayTao).Take(5).ToList());
+        }
+        public PartialViewResult GiamGiaManh()
+        {
+            return PartialView(dt.tbSanPhams.Where(n=>n.Sale == true).Take(4).ToList());
+        }
+        public PartialViewResult SanPhamMoi()
+        {
+            return PartialView(dt.tbSanPhams.Where(n=>n.SanPhamMoiorCu == "Mới").OrderByDescending(n=>n.NgayTao).Take(7).ToList());
+        }
     }
 }

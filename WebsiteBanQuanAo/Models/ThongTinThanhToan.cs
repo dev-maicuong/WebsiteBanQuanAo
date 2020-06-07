@@ -12,23 +12,27 @@ namespace WebsiteBanQuanAo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tbNguoiDung
+    public partial class ThongTinThanhToan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbNguoiDung()
+        public ThongTinThanhToan()
         {
-            this.ThongTinThanhToans = new HashSet<ThongTinThanhToan>();
+            this.CTDatHangs = new HashSet<CTDatHang>();
         }
     
-        public int MaNguoiDung { get; set; }
-        public string TaiKhoanNguoiDung { get; set; }
-        public string MatKhauNguoiDung { get; set; }
+        public int MaTTTT { get; set; }
+        public Nullable<int> MaNguoiDung { get; set; }
         public string TenNguoiDung { get; set; }
         public string DiaChiNguoiDung { get; set; }
         public Nullable<int> SDTNguoiDung { get; set; }
         public string GioiTinhNguoiDung { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
+        public string TaiKhoanNguoiDung { get; set; }
+        public Nullable<System.DateTime> NgayNhanSanPham { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinThanhToan> ThongTinThanhToans { get; set; }
+        public virtual ICollection<CTDatHang> CTDatHangs { get; set; }
+        public virtual tbNguoiDung tbNguoiDung { get; set; }
     }
 }

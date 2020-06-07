@@ -1,0 +1,19 @@
+﻿@using WebsiteBanQuanAo.Models;
+@model List<tbSanPham>
+
+@foreach (var item in Model)
+{
+    <div class="recent-grids">
+        <div class="recent-left">
+            <a href="single.html"><img class="img-responsive " src="~/Content/Layout/images/@item.AnhMatTruoc" alt=""></a>
+        </div>
+        <div class="recent-right">
+            <h6 class="best2"><a href="single.html">@item.TenSanPham </a></h6>
+            <div class="block">
+                <div class="starbox small ghosting"> </div>
+            </div>
+            <span class=" price-in1"> @item.GiaSanPham</span>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+}

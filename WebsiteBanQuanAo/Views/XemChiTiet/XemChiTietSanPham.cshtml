@@ -17,19 +17,14 @@
                             <div class="flexslider">
                                 <ul class="slides">
                                     <li data-thumb="images/si.jpg">
-                                        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                                    </li>
-                                    <li data-thumb="images/si1.jpg">
-                                        <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                                    </li>
-                                    <li data-thumb="images/si2.jpg">
-                                        <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                                    </li>
+                                        <div class="thumb-image"> <img src="~/Content/Layout/images/@Model.AnhMatTruoc" data-imagezoom="true" class="img-responsive"> </div>
+                                    </li>                                   
                                 </ul>
                             </div>
                         </div>
                         <div class="single-right simpleCart_shelfItem">
                             <h4>@Model.TenSanPham</h4>
+                            <h3>@Model.tbDanhMuc.TenDanhMuc</h3>
                             <div class="block">
                                 <div class="starbox small ghosting"> </div>
                             </div>
@@ -62,7 +57,7 @@
                             </div>
                             <div class="women">
                                 <span class="size">@Model.KichThuocSanPham </span>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ hàng</a>
+                                <a href="@Url.Action("ThemVaoGioHang","GioHang", new { masanpham =Model.MaSanPham})" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="social-icon">
                                 <a href="#"><i class="icon"></i></a>
@@ -75,175 +70,19 @@
                     </div>
                 </div>
                 <div class="col-md-3 single-grid1">
-                    <h3>Recent Products</h3>
-                    <div class="recent-grids">
-                        <div class="recent-left">
-                            <a href="single.html"><img class="img-responsive " src="images/r.jpg" alt=""></a>
-                        </div>
-                        <div class="recent-right">
-                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <span class=" price-in1"> $ 29.00</span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="recent-grids">
-                        <div class="recent-left">
-                            <a href="single.html"><img class="img-responsive " src="images/r1.jpg" alt=""></a>
-                        </div>
-                        <div class="recent-right">
-                            <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <span class=" price-in1"> $ 19.00</span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="recent-grids">
-                        <div class="recent-left">
-                            <a href="single.html"><img class="img-responsive " src="images/r2.jpg" alt=""></a>
-                        </div>
-                        <div class="recent-right">
-                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <span class=" price-in1"> $ 19.00</span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="recent-grids">
-                        <div class="recent-left">
-                            <a href="single.html"><img class="img-responsive " src="images/r3.jpg" alt=""></a>
-                        </div>
-                        <div class="recent-right">
-                            <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <span class=" price-in1">$ 45.00</span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+                    <h3>Đồ liên quan</h3>                   
+                        @Html.Action("SanPhamLienQuan", "HienThi", new { loaisanpham = Model.LoaiSanPham })                
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <!--Product Description-->
             <div class="product-w3agile">
-                <h3 class="tittle1">Product Description</h3>
+                <h3 class="tittle1">Mô tả sản phẩm</h3>
                 <div class="product-grids">
                     <div class="col-md-4 product-grid">
                         <div id="owl-demo" class="owl-carousel">
                             <div class="item">
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 29.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 19.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 19.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1">$ 45.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 29.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 19.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1"> $ 19.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="recent-grids">
-                                    <div class="recent-left">
-                                        <a href="single.html"><img class="img-responsive " src="images/r3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-right">
-                                        <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <span class=" price-in1">$ 45.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
+                                @Html.Action("SanPhamMoi","HienThi")                              
                             </div>
                         </div>
                         <img class="img-responsive " src="images/woo2.jpg" alt="">
@@ -335,124 +174,9 @@
     <!--single-->
     <div class="new-arrivals-w3agile">
         <div class="container">
-            <h3 class="tittle1">Best Sellers</h3>
+            <h3 class="tittle1">Giảm giá mạnh</h3>
             <div class="arrivals-grids">
-                <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                    <div class="grid-arr">
-                        <div class="grid-arrival">
-                            <figure>
-                                <a href="single.html">
-                                    <div class="grid-img">
-                                        <img src="images/p28.jpg" class="img-responsive" alt="">
-                                    </div>
-                                    <div class="grid-img">
-                                        <img src="images/p27.jpg" class="img-responsive" alt="">
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="ribben">
-                            <p>NEW</p>
-                        </div>
-                        <div class="ribben1">
-                            <p>SALE</p>
-                        </div>
-                        <div class="block">
-                            <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="women">
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <span class="size">XL / XXL / S </span>
-                            <p><del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                    <div class="grid-arr">
-                        <div class="grid-arrival">
-                            <figure>
-                                <a href="single.html">
-                                    <div class="grid-img">
-                                        <img src="images/p30.jpg" class="img-responsive" alt="">
-                                    </div>
-                                    <div class="grid-img">
-                                        <img src="images/p29.jpg" class="img-responsive" alt="">
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="ribben2">
-                            <p>OUT OF STOCK</p>
-                        </div>
-                        <div class="block">
-                            <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="women">
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <span class="size">XL / XXL / S </span>
-                            <p><del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                    <div class="grid-arr">
-                        <div class="grid-arrival">
-                            <figure>
-                                <a href="single.html">
-                                    <div class="grid-img">
-                                        <img src="images/s2.jpg" class="img-responsive" alt="">
-                                    </div>
-                                    <div class="grid-img">
-                                        <img src="images/s1.jpg" class="img-responsive" alt="">
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="ribben1">
-                            <p>SALE</p>
-                        </div>
-                        <div class="block">
-                            <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="women">
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <span class="size">XL / XXL / S </span>
-                            <p><del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                    <div class="grid-arr">
-                        <div class="grid-arrival">
-                            <figure>
-                                <a href="single.html">
-                                    <div class="grid-img">
-                                        <img src="images/s4.jpg" class="img-responsive" alt="">
-                                    </div>
-                                    <div class="grid-img">
-                                        <img src="images/s3.jpg" class="img-responsive" alt="">
-                                    </div>
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="ribben">
-                            <p>NEW</p>
-                        </div>
-                        <div class="block">
-                            <div class="starbox small ghosting"> </div>
-                        </div>
-                        <div class="women">
-                            <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                            <span class="size">XL / XXL / S </span>
-                            <p><del>$100.00</del><em class="item_price">$70.00</em></p>
-                            <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+                @Html.Action("GiamGiaManh","HienThi")   
             </div>
         </div>
     </div>
