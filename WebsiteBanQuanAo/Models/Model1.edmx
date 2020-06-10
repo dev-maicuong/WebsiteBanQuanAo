@@ -23,6 +23,14 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="MaAdmin" />
+          </Key>
+          <Property Name="MaAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaiKhoanAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhauAdmin" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tbDanhMuc">
           <Key>
             <PropertyRef Name="MaDanhMuc" />
@@ -131,6 +139,7 @@
         <EntityContainer Name="DatabaseBanQuanAoModelStoreContainer">
           <EntitySet Name="CTDatHang" EntityType="Self.CTDatHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbDanhMuc" EntityType="Self.tbDanhMuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbNguoiDung" EntityType="Self.tbNguoiDung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbSanPham" EntityType="Self.tbSanPham" Schema="dbo" store:Type="Tables" />
@@ -176,6 +185,14 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="MaAdmin" />
+          </Key>
+          <Property Name="MaAdmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaiKhoanAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MatKhauAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbDanhMuc">
           <Key>
@@ -291,6 +308,7 @@
         <EntityContainer Name="DatabaseBanQuanAoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTDatHangs" EntityType="Self.CTDatHang" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbAdmins" EntityType="Self.tbAdmin" />
           <EntitySet Name="tbDanhMucs" EntityType="Self.tbDanhMuc" />
           <EntitySet Name="tbNguoiDungs" EntityType="Self.tbNguoiDung" />
           <EntitySet Name="tbSanPhams" EntityType="Self.tbSanPham" />
@@ -335,6 +353,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbAdmins">
+            <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbAdmin">
+              <MappingFragment StoreEntitySet="tbAdmin">
+                <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+                <ScalarProperty Name="TaiKhoanAdmin" ColumnName="TaiKhoanAdmin" />
+                <ScalarProperty Name="MatKhauAdmin" ColumnName="MatKhauAdmin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

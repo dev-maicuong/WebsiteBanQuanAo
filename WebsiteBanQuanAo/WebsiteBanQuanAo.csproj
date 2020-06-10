@@ -134,6 +134,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDangXuatController.cs" />
+    <Compile Include="Controllers\AdminDemSanPhamController.cs" />
+    <Compile Include="Controllers\AdminQuanLyController.cs" />
+    <Compile Include="Controllers\AdminQuanLyDanhMucController.cs" />
+    <Compile Include="Controllers\AdminQuanLyDatHangController.cs" />
+    <Compile Include="Controllers\AdminQuanLyNguoiDungController.cs" />
+    <Compile Include="Controllers\AdminQuanLySanPhamController.cs" />
+    <Compile Include="Controllers\AdminQuanLyTTTTController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\DangXuatController.cs" />
     <Compile Include="Controllers\DemSanPhamNamController.cs" />
@@ -148,9 +157,11 @@
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\SanPhamDuocMuaNhieuNhatController.cs" />
     <Compile Include="Controllers\TaoTaiKhoanController.cs" />
+    <Compile Include="Controllers\tbNguoiDungsController.cs" />
     <Compile Include="Controllers\tbSanPhamsController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
     <Compile Include="Controllers\ThongTinThanhToansController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TrangCaNhanController.cs" />
     <Compile Include="Controllers\XemChiTietController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,6 +189,9 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbAdmin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tbDanhMuc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -197,6 +211,72 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\LayoutAdmin\css\animate.css" />
+    <Content Include="Content\LayoutAdmin\css\bootstrap.css" />
+    <Content Include="Content\LayoutAdmin\css\custom.css" />
+    <Content Include="Content\LayoutAdmin\css\export.css" />
+    <Content Include="Content\LayoutAdmin\css\font-awesome.css" />
+    <Content Include="Content\LayoutAdmin\css\graph.css" />
+    <Content Include="Content\LayoutAdmin\css\jqcandlestick.css" />
+    <Content Include="Content\LayoutAdmin\css\monthly.css" />
+    <Content Include="Content\LayoutAdmin\css\owl.carousel.css" />
+    <Content Include="Content\LayoutAdmin\css\SidebarNav.min.css" />
+    <Content Include="Content\LayoutAdmin\css\style.css" />
+    <Content Include="Content\LayoutAdmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\LayoutAdmin\images\1.jpg" />
+    <Content Include="Content\LayoutAdmin\images\2.jpg" />
+    <Content Include="Content\LayoutAdmin\images\3.jpg" />
+    <Content Include="Content\LayoutAdmin\images\4.jpg" />
+    <Content Include="Content\LayoutAdmin\images\a.png" />
+    <Content Include="Content\LayoutAdmin\images\i1.png" />
+    <Content Include="Content\LayoutAdmin\images\i2.png" />
+    <Content Include="Content\LayoutAdmin\images\i3.png" />
+    <Content Include="Content\LayoutAdmin\images\i4.png" />
+    <Content Include="Content\LayoutAdmin\images\img-sprite.png" />
+    <Content Include="Content\LayoutAdmin\images\img1.png" />
+    <Content Include="Content\LayoutAdmin\images\lock.png" />
+    <Content Include="Content\LayoutAdmin\images\mail.png" />
+    <Content Include="Content\LayoutAdmin\images\search-icon.png" />
+    <Content Include="Content\LayoutAdmin\images\slider1.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider2.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider3.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider4.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider5.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider6.jpg" />
+    <Content Include="Content\LayoutAdmin\images\slider7.jpg" />
+    <Content Include="Content\LayoutAdmin\images\tick.png" />
+    <Content Include="Content\LayoutAdmin\images\user.png" />
+    <Content Include="Content\LayoutAdmin\images\weather.jpg" />
+    <Content Include="Content\LayoutAdmin\js\amcharts.js" />
+    <Content Include="Content\LayoutAdmin\js\bootstrap.js" />
+    <Content Include="Content\LayoutAdmin\js\Chart.bundle.js" />
+    <Content Include="Content\LayoutAdmin\js\Chart.js" />
+    <Content Include="Content\LayoutAdmin\js\Chart.min.js" />
+    <Content Include="Content\LayoutAdmin\js\chartinator.js" />
+    <Content Include="Content\LayoutAdmin\js\classie.js" />
+    <Content Include="Content\LayoutAdmin\js\custom.js" />
+    <Content Include="Content\LayoutAdmin\js\export.min.js" />
+    <Content Include="Content\LayoutAdmin\js\images\dragIconRoundBig.svg" />
+    <Content Include="Content\LayoutAdmin\js\images\lens.svg" />
+    <Content Include="Content\LayoutAdmin\js\index.js" />
+    <Content Include="Content\LayoutAdmin\js\index1.js" />
+    <Content Include="Content\LayoutAdmin\js\index2.js" />
+    <Content Include="Content\LayoutAdmin\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\LayoutAdmin\js\jquery.flot.js" />
+    <Content Include="Content\LayoutAdmin\js\jquery.jqcandlestick.min.js" />
+    <Content Include="Content\LayoutAdmin\js\jquery.nicescroll.js" />
+    <Content Include="Content\LayoutAdmin\js\light.js" />
+    <Content Include="Content\LayoutAdmin\js\metisMenu.min.js" />
+    <Content Include="Content\LayoutAdmin\js\modernizr.custom.js" />
+    <Content Include="Content\LayoutAdmin\js\monthly.js" />
+    <Content Include="Content\LayoutAdmin\js\owl.carousel.js" />
+    <Content Include="Content\LayoutAdmin\js\pie-chart.js" />
+    <Content Include="Content\LayoutAdmin\js\scripts.js" />
+    <Content Include="Content\LayoutAdmin\js\serial.js" />
+    <Content Include="Content\LayoutAdmin\js\SidebarNav.min.js" />
+    <Content Include="Content\LayoutAdmin\js\SimpleChart.js" />
+    <Content Include="Content\LayoutAdmin\js\utils.js" />
+    <Content Include="Content\LayoutAdmin\js\validator.min.js" />
     <Content Include="Content\Layout\css\bootstrap.css" />
     <Content Include="Content\Layout\css\coreSlider.css" />
     <Content Include="Content\Layout\css\flexslider.css" />
@@ -462,6 +542,15 @@
     <Content Include="Content\Layout\fonts\FontAwesome.otf" />
     <Content Include="Content\Layout\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Layout\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\LayoutAdmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\LayoutAdmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\LayoutAdmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\LayoutAdmin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\LayoutAdmin\fonts\FontAwesome.otf" />
+    <Content Include="Content\LayoutAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\LayoutAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\LayoutAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\LayoutAdmin\fonts\glyphicons-halflings-regular.woff2" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -518,7 +607,6 @@
     <Content Include="Views\TrangCaNhan\TrangCaNhan.cshtml" />
     <Content Include="Views\HienThiAo\HienThiAo.cshtml" />
     <Content Include="Views\HienThiQuan\HienThiQuan.cshtml" />
-    <Content Include="Views\DoiMatKhauKhachHang\DoiMatKhauKhachHang.cshtml" />
     <Content Include="Views\tbSanPhams\Create.cshtml" />
     <Content Include="Views\tbSanPhams\Delete.cshtml" />
     <Content Include="Views\tbSanPhams\Details.cshtml" />
@@ -537,9 +625,50 @@
     <Content Include="Views\ThongTinThanhToans\Index.cshtml" />
     <Content Include="Views\GioHang\GioHangKeThua.cshtml" />
     <Content Include="Views\ThanhToan\XacNhan.cshtml" />
+    <Content Include="Views\DoiMatKhauKhachHang\DoiMatKhauKhachHang.cshtml" />
+    <Content Include="Views\tbNguoiDungs\Create.cshtml" />
+    <Content Include="Views\tbNguoiDungs\Delete.cshtml" />
+    <Content Include="Views\tbNguoiDungs\Details.cshtml" />
+    <Content Include="Views\tbNguoiDungs\Edit.cshtml" />
+    <Content Include="Views\tbNguoiDungs\Index.cshtml" />
+    <Content Include="Views\Shared\LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\IndexAdmin.cshtml" />
+    <Content Include="Views\AdminQuanLySanPham\Create.cshtml" />
+    <Content Include="Views\AdminQuanLySanPham\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLySanPham\Details.cshtml" />
+    <Content Include="Views\AdminQuanLySanPham\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLySanPham\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyNguoiDung\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyNguoiDung\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyNguoiDung\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyNguoiDung\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyNguoiDung\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyDatHang\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyDatHang\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyDatHang\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyDatHang\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyDatHang\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyTTTT\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyTTTT\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyTTTT\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyTTTT\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyTTTT\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhMuc\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhMuc\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhMuc\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhMuc\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhMuc\Index.cshtml" />
+    <Content Include="Views\AdminQuanLy\Create.cshtml" />
+    <Content Include="Views\AdminQuanLy\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLy\Details.cshtml" />
+    <Content Include="Views\AdminQuanLy\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLy\Index.cshtml" />
+    <Content Include="Views\TimKiem\TimKiem.cshtml" />
+    <Content Include="Views\AdminDemSanPham\AdminDemSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminDangXuat\" />
     <Folder Include="Views\DangXuat\" />
   </ItemGroup>
   <ItemGroup>

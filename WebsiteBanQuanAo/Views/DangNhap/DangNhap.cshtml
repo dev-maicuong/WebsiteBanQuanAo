@@ -2,6 +2,10 @@
 @{
     ViewBag.Title = "DangNhap";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    if(Session["NguoiDung"] != null|| Session["Admin"] != null)
+    {
+        Response.Redirect("/Home/Index");
+    }
 }
 
 <!--banner-->

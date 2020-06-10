@@ -1,0 +1,35 @@
+﻿@model WebsiteBanQuanAo.Models.CTDatHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CTDatHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tbSanPham.TenSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbSanPham.TenSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThongTinThanhToan.TenNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThongTinThanhToan.TenNguoiDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCTDatHang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

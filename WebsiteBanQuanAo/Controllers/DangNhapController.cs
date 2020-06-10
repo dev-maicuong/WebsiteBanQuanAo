@@ -22,6 +22,12 @@ namespace WebsiteBanQuanAo.Controllers
             String taikhoan = f["Email"].ToString();
             String matkhau = f["Password"].ToString();            
              nd = dt.tbNguoiDungs.SingleOrDefault(n => n.TaiKhoanNguoiDung == taikhoan && n.MatKhauNguoiDung == matkhau);
+            tbAdmin admin = dt.tbAdmins.SingleOrDefault(n => n.TaiKhoanAdmin == taikhoan && n.MatKhauAdmin == matkhau);
+            if(admin != null)
+            {
+                Session["Admin"] = admin;
+                return Redirect("/Admin/IndexAdmin");
+            }
             if (nd != null)
             {
                 Session["NguoiDung"] = nd;

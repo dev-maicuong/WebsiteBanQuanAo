@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebsiteBanQuanAo.Models.ThongTinThanhToan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+    var idtttt = "idtttt";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <tr class="bg-danger text-white">
+        <th>
+            @Html.DisplayNameFor(model => model.TenNguoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinhNguoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhanSanPham)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinhNguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayNhanSanPham)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTTTT }) |
+                <a href="#" data-toggle="modal" data-target="#@idtttt@item.MaTTTT"><i class="fa fa-eye"></i></a>
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTTTT })
+            </td>
+        </tr>
+        <div class="modal fade" id="@idtttt@item.MaTTTT" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @item.TenNguoiDung<br />
+                        @item.DiaChiNguoiDung<br />
+                        @item.SDTNguoiDung<br />
+                        @item.GioiTinhNguoiDung<br />
+                        @item.NgayNhanSanPham<br />
+                        @item.SoLuong<br />
+                        @item.TongTien<br />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</table>

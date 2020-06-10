@@ -1,0 +1,35 @@
+﻿@model WebsiteBanQuanAo.Models.tbAdmin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbAdmin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiKhoanAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoanAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhauAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhauAdmin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaAdmin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
