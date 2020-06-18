@@ -22,5 +22,18 @@ namespace WebsiteBanQuanAo.Controllers
                 return Redirect("/Home/Index");
             }
         }
+        public PartialViewResult TongTien()
+        {
+            return PartialView(dt.ThongTinThanhToans.ToList());
+        }
+        public PartialViewResult TongDatHang()
+        {
+
+            return PartialView(dt.CTDatHangs.ToList());
+        }
+        public PartialViewResult TongNguoiDung()
+        {
+            return PartialView(dt.tbNguoiDungs.ToList());
+        }
     }
 }

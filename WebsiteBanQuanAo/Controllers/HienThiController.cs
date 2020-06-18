@@ -30,5 +30,21 @@ namespace WebsiteBanQuanAo.Controllers
         {
             return PartialView(dt.tbSanPhams.Where(n=>n.SanPhamMoiorCu == "Mới").OrderByDescending(n=>n.NgayTao).Take(7).ToList());
         }
+        public ActionResult AoNuDuocMuaNhieu()
+        {
+            return View(dt.tbSanPhams.Where(n=>n.GioiTinh==1 && n.LoaiSanPham ==false).OrderByDescending(n => n.LuongMua).Take(10).ToList());
+        }
+        public ActionResult QuanNuDuocMuaNhieuNhat()
+        {
+            return View(dt.tbSanPhams.Where(n => n.GioiTinh == 1 && n.LoaiSanPham == true).OrderByDescending(n => n.LuongMua).Take(10).ToList());
+        }
+        public ActionResult AoNamDuocMuaNhieuNhat()
+        {
+            return View(dt.tbSanPhams.Where(n => n.GioiTinh == 0 && n.LoaiSanPham == false).OrderByDescending(n => n.LuongMua).Take(10).ToList());
+        }
+        public ActionResult QuanNamDuocMuaNhieuNhat()
+        {
+            return View(dt.tbSanPhams.Where(n => n.GioiTinh == 0 && n.LoaiSanPham == true).OrderByDescending(n => n.LuongMua).Take(10).ToList());
+        }
     }
 }

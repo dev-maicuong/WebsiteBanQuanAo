@@ -10,11 +10,13 @@
     <div class="col_3">
         <div class="col-md-3 widget widget1">
             <div class="r3_counter_box">
-                <i class="pull-left fa fa-dollar icon-rounded"></i>
-                <div class="stats">
-                    <h5><strong>$452</strong></h5>
-                    <span>Tổng tiền</span>
-                </div>
+                <a href="/AdminQuanLyTTTT/Index">
+                    <i class="pull-left fa fa-dollar icon-rounded"></i>
+                    <div class="stats">
+                        <h5><strong>@Html.Action("TongTien", "Admin")</strong></h5>
+                        <span>Tổng tiền</span>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-3 widget widget1">
@@ -28,11 +30,13 @@
         </div>
         <div class="col-md-3 widget widget1">
             <div class="r3_counter_box">
-                <i class="pull-left fa fa-money user2 icon-rounded"></i>
-                <div class="stats">
-                    <h5><strong>$1012</strong></h5>
-                    <span>Tổng đơn đặt hàng</span>
-                </div>
+                <a href="/AdminQuanLyDatHang/Index">
+                    <i class="pull-left fa fa-money user2 icon-rounded"></i>
+                    <div class="stats">
+                        <h5><strong>@Html.Action("TongDatHang", "Admin")</strong></h5>
+                        <span>Tổng đơn đặt hàng</span>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-md-3 widget widget1">
@@ -46,11 +50,13 @@
         </div>
         <div class="col-md-3 widget">
             <div class="r3_counter_box">
-                <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
-                <div class="stats">
-                    <h5><strong>1450</strong></h5>
-                    <span>Tổng người dùng</span>
-                </div>
+                <a href="/AdminQuanLyNguoiDung/Index">
+                    <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
+                    <div class="stats">
+                        <h5><strong>@Html.Action("TongNguoiDung", "Admin")</strong></h5>
+                        <span>Tổng người dùng</span>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="clearfix"> </div>

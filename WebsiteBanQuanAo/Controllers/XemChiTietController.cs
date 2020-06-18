@@ -13,6 +13,7 @@ namespace WebsiteBanQuanAo.Controllers
         // GET: XemChiTiet
         public ActionResult XemChiTietSanPham( int masanpham=0)
         {
+            Session["MaSanPhamChiTiet"] = masanpham;
             return View(dt.tbSanPhams.SingleOrDefault(n=>n.MaSanPham == masanpham));
         }
     }

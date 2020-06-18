@@ -1,13 +1,56 @@
 ﻿@model WebsiteBanQuanAo.Models.tbNguoiDung
-
+@using WebsiteBanQuanAo.Models;
 @{
+    tbNguoiDung nd = (tbNguoiDung)Session["NguoiDung"];
     ViewBag.Title = "DoiMatKhauKhachHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@if (nd != null && nd.MaNguoiDung == Model.MaNguoiDung)
+{
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <form action="@Url.Action("MatKhauKhachHang","MatKhauKhacHang")" method="get">
-        mật khẩu củ<input type="password" name="matkhaucu" class="form-control" />
-        mật khẩu mới<input type="number" name="matkhaumoi" class="form-control" id="exampleInputEmail1" value="">
-        nhập lại mật khẩu<input type="password" name="nhaplaimatkhau" class="form-control" />
-        <button type="submit" class="btn btn-danger">Cập nhật</button>
-    </form>
+    <div class="form-horizontal">
+        <h4>tbNguoiDung</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaNguoiDung)
+
+        <div class="form-group">
+            @Html.Raw(ViewBag.ThongBao)
+            <b>Mat Khau cu</b><br />
+            <div class="col-md-10">
+               <input type="password" name="cu" class="form-control" />
+            </div>
+            <br />
+            <b>Mat Khau</b>
+            <br />
+            <div class="col-md-10">
+                <input type="password" name="MatKhauNguoiDung" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <br />
+            <b>Xac nhan Mat Khau</b><br />
+            <div class="col-md-10">
+                <input type="password" name="NhapLai" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+else
+{
+    Response.Redirect("/TrangCaNhan/TrangCaNhan");
+}

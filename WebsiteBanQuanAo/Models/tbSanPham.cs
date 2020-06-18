@@ -18,6 +18,8 @@ namespace WebsiteBanQuanAo.Models
         public tbSanPham()
         {
             this.CTDatHangs = new HashSet<CTDatHang>();
+            this.BinhLuans = new HashSet<BinhLuan>();
+            this.DanhGias = new HashSet<DanhGia>();
         }
     
         public int MaSanPham { get; set; }
@@ -40,5 +42,9 @@ namespace WebsiteBanQuanAo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDatHang> CTDatHangs { get; set; }
         public virtual tbDanhMuc tbDanhMuc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BinhLuan> BinhLuans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DanhGia> DanhGias { get; set; }
     }
 }

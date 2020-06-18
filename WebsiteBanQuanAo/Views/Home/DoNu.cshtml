@@ -18,10 +18,10 @@
                             <h1 href="#" class="list-group-item list-group-item-action active" style="font-size: 20px; font-weight: 800; color:aliceblue; background-color:#0d59af">
                                 Danh mục
                             </h1>
-                            <a href="#" class="list-group-item list-group-item-action" style=" font-weight:600">Áo nữ được mua nhiều nhất</a>
-                            <a href="#" class="list-group-item list-group-item-action" style=" font-weight:600">Quần nữ được mua nhiều nhất</a>
-                            <a href="#" class="list-group-item list-group-item-action" style=" font-weight:600">Áo nam được mua nhiều nhất</a>
-                            <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true" style=" font-weight:600">Quần nam được mua nhiều nhất</a>
+                            <a href="@Url.Action("AoNuDuocMuaNhieu","HienThi")" class="list-group-item list-group-item-action" style=" font-weight:600">Áo nữ được mua nhiều nhất</a>
+                            <a href="@Url.Action("QuanNuDuocMuaNhieuNhat","HienThi")" class="list-group-item list-group-item-action" style=" font-weight:600">Quần nữ được mua nhiều nhất</a>
+                            <a href="@Url.Action("AoNamDuocMuaNhieuNhat","HienThi")" class="list-group-item list-group-item-action" style=" font-weight:600">Áo nam được mua nhiều nhất</a>
+                            <a href="@Url.Action("QuanNamDuocMuaNhieuNhat","HienThi")" class="list-group-item list-group-item-action" style=" font-weight:600">Quần nam được mua nhiều nhất</a> 
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                                     <div class="grid-arr">
                                         <div class="grid-arrival">
                                             <figure>
-                                                <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+                                                <a href="@Url.Action("XemChiTietSanPham","XemChiTiet", new { masanpham = item.MaSanPham })" class="new-gri">
                                                     <div class="grid-img">
                                                         <img src="~/Content/Layout/images/@item.AnhMatTruoc" class="img-responsive" alt="" style="height: 200px">
                                                     </div>

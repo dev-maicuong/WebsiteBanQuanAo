@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="91c1d6a281904ed6ab5a19b226fbdfbf" Name="Diagram1">
+      <Diagram DiagramId="91c1d6a281904ed6ab5a19b226fbdfbf" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="DatabaseBanQuanAoModel.CTDatHang" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseBanQuanAoModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbAdmin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
@@ -16,7 +16,16 @@
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_CTDatHang_ThongTinThanhToan" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_ThongTinThanhToan_tbNguoiDung" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.BinhLuan" Width="1.5" PointX="5.375" PointY="7.75" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbNguoiDung" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbSanPham" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.TraLoiBinhLuan" Width="1.5" PointX="8.625" PointY="4.625" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_BinhLuan" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_tbNguoiDung" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.DanhGia" Width="1.5" PointX="8.25" PointY="7.875" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbNguoiDung1" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbSanPham" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

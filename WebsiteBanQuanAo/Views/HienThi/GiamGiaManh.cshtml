@@ -4,37 +4,36 @@
 {
     <div class="col-md-3 arrival-grid simpleCart_shelfItem">
         <div class="grid-arr">
-            <div class="grid-arrival">
-                <figure>
-                    <a href="single.html">
-                        <div class="grid-img">
-                            <img src="~/Content/Layout/images/@item.AnhMatTruoc" class="img-responsive" alt="" style="width: 100%; height:300px">
-                        </div>
-
-                    </a>
-                </figure>
-            </div>
-            <div class="ribben">
-                <p>@item.SanPhamMoiorCu</p>
-            </div>
-            <div class="ribben1">
-                @if (item.Sale == true)
-                {
-                    <p>Đang Sale</p>
-                }
-            </div>
-            <div class="ribben2">
-                <p>Hết Hàng</p>
-            </div>
-            <div class="block">
-                <div class="starbox small ghosting"> </div>
-            </div>
-            <div class="women">
-                <h6><a href="single.html">@item.TenSanPham</a></h6>
-                <span class="size">@item.KichThuocSanPham </span>
-                <p><del>@item.GiaKhuyenMai</del><em class="item_price">@item.GiaSanPham</em></p>
-                <a href="@Url.Action("ThemVaoGioHang","GioHang", new {masanpham = item.MaSanPham })" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ hàng</a>
-            </div>
+            <a href="@Url.Action("XemChiTietSanPham","XemChiTiet", new {masanpham = item.MaSanPham })">
+                <div class="grid-arrival">
+                    <figure>
+                            <div class="grid-img">
+                                <img src="~/Content/Layout/images/@item.AnhMatTruoc" class="img-responsive" alt="" style="width: 100%; height:300px">
+                            </div>
+                    </figure>
+                </div>
+                <div class="ribben">
+                    <p>@item.SanPhamMoiorCu</p>
+                </div>
+                <div class="ribben1">
+                    @if (item.Sale == true)
+                    {
+                        <p>Đang Sale</p>
+                    }
+                </div>
+                <div class="ribben2">
+                    <p>Hết Hàng</p>
+                </div>
+                <div class="block">
+                    <div class="starbox small ghosting"> </div>
+                </div>
+                <div class="women">
+                    <h6>@item.TenSanPham</h6>
+                    <span class="size">@item.KichThuocSanPham </span>
+                    <p><del>@item.GiaKhuyenMai</del><em class="item_price">@item.GiaSanPham</em></p>
+                    <a href="@Url.Action("ThemVaoGioHang","GioHang", new {masanpham = item.MaSanPham })" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ hàng</a>
+                </div>
+            </a>
         </div>
     </div>
 }

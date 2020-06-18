@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebsiteBanQuanAo.Models.BinhLuan>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NoiDungBinhLuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDangBinhLuan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbNguoiDung.TaiKhoanNguoiDung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbSanPham.TenSanPham)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiDungBinhLuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDangBinhLuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbNguoiDung.TaiKhoanNguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbSanPham.TenSanPham)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MaBinhLuan }) |
+                @Html.ActionLink("Details", "Details", new { id=item.MaBinhLuan }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MaBinhLuan })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

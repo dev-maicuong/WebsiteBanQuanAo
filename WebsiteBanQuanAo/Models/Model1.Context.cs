@@ -32,5 +32,8 @@ namespace WebsiteBanQuanAo.Models
         public virtual DbSet<tbNguoiDung> tbNguoiDungs { get; set; }
         public virtual DbSet<tbSanPham> tbSanPhams { get; set; }
         public virtual DbSet<ThongTinThanhToan> ThongTinThanhToans { get; set; }
+        public virtual DbSet<BinhLuan> BinhLuans { get; set; }
+        public virtual DbSet<TraLoiBinhLuan> TraLoiBinhLuans { get; set; }
+        public virtual DbSet<DanhGia> DanhGias { get; set; }
     }
 }

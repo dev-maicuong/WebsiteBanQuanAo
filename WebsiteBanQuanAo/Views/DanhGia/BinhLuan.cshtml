@@ -1,0 +1,124 @@
+﻿@using WebsiteBanQuanAo.Models;
+@model List<BinhLuan>
+@{ 
+    tbNguoiDung nd = (tbNguoiDung)Session["NguoiDung"];
+    var tenbl2 = "idtenbinhluan2";
+}
+    <div class="container">
+        @if (nd != null)
+        {
+            <form action="@Url.Action("DanhGia2","DanhGia2")" method="post">
+                <input type="hidden" name="DanhGia1" value="1" />
+                <input type="hidden" name="MaNguoiDung" value="@nd.MaNguoiDung" />
+                <button type="submit"> <i class="fas fa-star" style="color:darkorange"> </i> </button>
+            </form>
+            <form action="@Url.Action("DanhGia2","DanhGia2")" method="post">
+                <input type="hidden" name="DanhGia1" value="2" />
+                <input type="hidden" name="MaNguoiDung" value="@nd.MaNguoiDung" />
+                <button type="submit"> <i class="fas fa-star" style="color:darkorange"> </i> </button>
+            </form>
+            <form action="@Url.Action("DanhGia2","DanhGia2")" method="post">
+                <input type="hidden" name="DanhGia1" value="3" />
+                <input type="hidden" name="MaNguoiDung" value="@nd.MaNguoiDung" />
+                <button type="submit"> <i class="fas fa-star" style="color:darkorange"> </i> </button>
+            </form>
+            <form action="@Url.Action("DanhGia2","DanhGia2")" method="post">
+                <input type="hidden" name="DanhGia1" value="4" />
+                <input type="hidden" name="MaNguoiDung" value="@nd.MaNguoiDung" />
+                <button type="submit"> <i class="fas fa-star" style="color:darkorange"> </i> </button>
+            </form>
+            <form action="@Url.Action("DanhGia2","DanhGia2")" method="post">
+                <input type="hidden" name="DanhGia1" value="5" />
+                <input type="hidden" name="MaNguoiDung" value="@nd.MaNguoiDung" />
+                <button type="submit"> <i class="fas fa-star" style="color:darkorange"> </i> </button>
+            </form>
+            <br />
+            <form action="@Url.Action("BinhLuan","DanhGia")" method="post">
+                <label>Bình luận sản phẩm </label>
+                <textarea class="ckeditor" type="text" Name="NoiDungBinhLuan" placeholder="Bình luận của bạn........."></textarea>
+                <input type="submit" value="Bình luận" class="btn btn-danger">
+            </form>
+            <br />
+        }
+        else
+        {
+            <a href="/DangNhap/DangNhap" class="btn btn-danger">Dang nhap de cmt</a>
+        }
+        @foreach (var item in Model.OrderByDescending(n => n.NgayDangBinhLuan))
+        {
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
+                            <p class="text-secondary text-center">@item.NgayDangBinhLuan.Value.Date</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>
+                                <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>@item.tbNguoiDung.TenNguoiDung</strong></a>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                            </p>
+                            <div class="clearfix"></div>
+                            <p>@Html.Raw(item.NoiDungBinhLuan)</p>
+                            <p>
+                                <a class="float-right btn btn-outline-primary ml-2" data-toggle="collapse" href="#@tenbl2@item.MaBinhLuan"> <i class="fa fa-reply"></i> Trả lời</a>
+                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse" id="@tenbl2@item.MaBinhLuan">
+                <div class="card card-body">
+                    @if (nd != null)
+                    {
+                        <form action="@Url.Action("TraLoiBinhLuan","DanhGia")" method="post">
+                            <input type="hidden" name="MaBinhLuan" value="@item.MaBinhLuan" />
+                            <textarea type="text" Name="NoiDungTraLoi" placeholder="Bình luận của bạn....." style="width:95% ;height:80px ; margin-left:70px"></textarea>
+                            <input type="submit" value="Bình luận" class="btn btn-danger" style=" margin-left:70px">
+                        </form>
+                        <br />
+                    }
+                    else
+                    {
+                        <a href="/DangNhap/DangNhap" class="btn btn-danger">Dang nhap de cmt</a>
+                    }
+                </div>
+            </div>
+            foreach (var item2 in item.TraLoiBinhLuans.OrderByDescending(n => n.NgayTraLoi))
+            {
+                <div class="card card-inner" style="margin-left:70px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
+                                <p class="text-secondary text-center">@item2.NgayTraLoi.Value.Date</p>
+                            </div>
+                            <div class="col-md-10">
+                                <p><a href="#"><strong>@item2.tbNguoiDung.TenNguoiDung</strong></a></p>
+                                <p>@item2.NoiDungTraLoi</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            if (nd != null)
+            {
+                <form action="@Url.Action("TraLoiBinhLuan","DanhGia")" method="post">
+                    <input type="hidden" name="MaBinhLuan" value="@item.MaBinhLuan" />
+                    <textarea type="text" Name="NoiDungTraLoi" placeholder="Bình luận của bạn....." style="width:95% ;height:80px ; margin-left:70px"></textarea>
+                    <input type="submit" value="Bình luận" class="btn btn-danger" style=" margin-left:70px">
+                </form>
+                <br />
+            }
+            else
+            {
+                <a href="/DangNhap/DangNhap" class="btn btn-danger">Dang nhap de cmt</a>
+            }
+        }
+    </div>
