@@ -139,11 +139,14 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminDangXuatController.cs" />
     <Compile Include="Controllers\AdminDemSanPhamController.cs" />
+    <Compile Include="Controllers\AdminQuanLyBinhLuanController.cs" />
     <Compile Include="Controllers\AdminQuanLyController.cs" />
+    <Compile Include="Controllers\AdminQuanLyDanhGiaController.cs" />
     <Compile Include="Controllers\AdminQuanLyDanhMucController.cs" />
     <Compile Include="Controllers\AdminQuanLyDatHangController.cs" />
     <Compile Include="Controllers\AdminQuanLyNguoiDungController.cs" />
     <Compile Include="Controllers\AdminQuanLySanPhamController.cs" />
+    <Compile Include="Controllers\AdminQuanLyTraLoiController.cs" />
     <Compile Include="Controllers\AdminQuanLyTTTTController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\DangXuatController.cs" />
@@ -2665,6 +2668,21 @@
     <Content Include="Views\HienThi\QuanNuDuocMuaNhieuNhat.cshtml" />
     <Content Include="Views\HienThi\AoNamDuocMuaNhieuNhat.cshtml" />
     <Content Include="Views\HienThi\QuanNamDuocMuaNhieuNhat.cshtml" />
+    <Content Include="Views\AdminQuanLyBinhLuan\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyBinhLuan\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyBinhLuan\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyBinhLuan\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyBinhLuan\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyTraLoi\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyTraLoi\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyTraLoi\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyTraLoi\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyTraLoi\Index.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhGia\Create.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhGia\Delete.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhGia\Details.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhGia\Edit.cshtml" />
+    <Content Include="Views\AdminQuanLyDanhGia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

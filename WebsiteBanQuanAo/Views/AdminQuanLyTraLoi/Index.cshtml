@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebsiteBanQuanAo.Models.TraLoiBinhLuan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" class="table table-bordered table-striped table-hover">
+    <tr class="bg-danger text-white">
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDungTraLoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BinhLuan.NoiDungBinhLuan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbNguoiDung.TenNguoiDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDungTraLoi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BinhLuan.NoiDungBinhLuan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbNguoiDung.TenNguoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaTraLoiBinhLuan }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaTraLoiBinhLuan }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaTraLoiBinhLuan })
+        </td>
+    </tr>
+}
+
+</table>
