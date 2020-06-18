@@ -32,7 +32,7 @@
                 @Html.DisplayFor(modelItem => item.MatKhauAdmin)
             </td>
             <td>
-                <a href="@Url.Action("Edit", "AdminQuanLyTTT", new { id = item.MaAdmin })"><i class="fa fa-edit" ></i></a> |
+                <a href="@Url.Action("Edit", "AdminQuanLy", new { id = item.MaAdmin })"><i class="fa fa-edit" ></i></a> |
                 <a href="#" data-toggle="modal" data-target="#@idadmin@item.MaAdmin"><i class="fa fa-eye"></i></a> |
                 @Html.ActionLink("Delete", "Delete", new { id = item.MaAdmin })
             </td>

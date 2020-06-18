@@ -34,9 +34,9 @@
                             {
 
                             }
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
+                        <div class="block">
+                            @Html.Action("DanhGia2", "DanhGia2", new { masanpham = item.MaSanPham })
+                        </div>
                             <div class="women">
                                 <h6><a href="single.html">@item.TenSanPham</a></h6>
                                 <span class="size">@item.KichThuocSanPham </span>

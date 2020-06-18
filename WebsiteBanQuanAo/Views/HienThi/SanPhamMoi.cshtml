@@ -10,7 +10,7 @@
         <div class="recent-right">
             <h6 class="best2"><a href="single.html">@item.TenSanPham </a></h6>
             <div class="block">
-                <div class="starbox small ghosting"> </div>
+                @Html.Action("DanhGia2", "DanhGia2", new { masanpham = item.MaSanPham })
             </div>
             <span class=" price-in1"> @item.GiaSanPham</span>
         </div>

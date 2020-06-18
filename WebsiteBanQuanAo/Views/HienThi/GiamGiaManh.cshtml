@@ -25,7 +25,7 @@
                     <p>Hết Hàng</p>
                 </div>
                 <div class="block">
-                    <div class="starbox small ghosting"> </div>
+                    @Html.Action("DanhGia2", "DanhGia2", new { masanpham = item.MaSanPham })
                 </div>
                 <div class="women">
                     <h6>@item.TenSanPham</h6>
