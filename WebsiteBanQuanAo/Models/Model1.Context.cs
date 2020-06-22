@@ -25,15 +25,14 @@ namespace WebsiteBanQuanAo.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BinhLuan> BinhLuans { get; set; }
         public virtual DbSet<CTDatHang> CTDatHangs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<DanhGia> DanhGias { get; set; }
         public virtual DbSet<tbAdmin> tbAdmins { get; set; }
         public virtual DbSet<tbDanhMuc> tbDanhMucs { get; set; }
         public virtual DbSet<tbNguoiDung> tbNguoiDungs { get; set; }
         public virtual DbSet<tbSanPham> tbSanPhams { get; set; }
         public virtual DbSet<ThongTinThanhToan> ThongTinThanhToans { get; set; }
-        public virtual DbSet<BinhLuan> BinhLuans { get; set; }
         public virtual DbSet<TraLoiBinhLuan> TraLoiBinhLuans { get; set; }
-        public virtual DbSet<DanhGia> DanhGias { get; set; }
     }
 }

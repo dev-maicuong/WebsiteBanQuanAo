@@ -4,28 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="91c1d6a281904ed6ab5a19b226fbdfbf" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.CTDatHang" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbAdmin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbDanhMuc" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbNguoiDung" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbSanPham" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.ThongTinThanhToan" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="22ee2eaaa37d41f3b3dd58c483c6668b" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.BinhLuan" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.CTDatHang" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.DanhGia" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbAdmin" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbDanhMuc" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbNguoiDung" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.tbSanPham" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.ThongTinThanhToan" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.TraLoiBinhLuan" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbNguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_BinhLuan" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_CTDatHang_tbSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_CTDatHang_ThongTinThanhToan" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbNguoiDung1" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_tbSanPham_tbDanhMuc" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseBanQuanAoModel.FK_ThongTinThanhToan_tbNguoiDung" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.BinhLuan" Width="1.5" PointX="5.375" PointY="7.75" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbNguoiDung" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_BinhLuan_tbSanPham" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.TraLoiBinhLuan" Width="1.5" PointX="8.625" PointY="4.625" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_BinhLuan" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_tbNguoiDung" />
-        <EntityTypeShape EntityType="DatabaseBanQuanAoModel.DanhGia" Width="1.5" PointX="8.25" PointY="7.875" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbNguoiDung1" />
-        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_DanhGia_tbSanPham" />
-        </Diagram>
+        <AssociationConnector Association="DatabaseBanQuanAoModel.FK_TraLoiBinhLuan_tbNguoiDung" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

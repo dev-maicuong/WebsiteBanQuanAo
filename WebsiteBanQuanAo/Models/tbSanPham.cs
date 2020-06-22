@@ -17,8 +17,8 @@ namespace WebsiteBanQuanAo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbSanPham()
         {
-            this.CTDatHangs = new HashSet<CTDatHang>();
             this.BinhLuans = new HashSet<BinhLuan>();
+            this.CTDatHangs = new HashSet<CTDatHang>();
             this.DanhGias = new HashSet<DanhGia>();
         }
     
@@ -40,11 +40,11 @@ namespace WebsiteBanQuanAo.Models
         public Nullable<bool> LoaiSanPham { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTDatHang> CTDatHangs { get; set; }
-        public virtual tbDanhMuc tbDanhMuc { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BinhLuan> BinhLuans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDatHang> CTDatHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhGia> DanhGias { get; set; }
+        public virtual tbDanhMuc tbDanhMuc { get; set; }
     }
 }

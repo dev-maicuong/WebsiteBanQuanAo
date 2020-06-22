@@ -17,10 +17,10 @@ namespace WebsiteBanQuanAo.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbNguoiDung()
         {
-            this.ThongTinThanhToans = new HashSet<ThongTinThanhToan>();
             this.BinhLuans = new HashSet<BinhLuan>();
-            this.TraLoiBinhLuans = new HashSet<TraLoiBinhLuan>();
             this.DanhGias = new HashSet<DanhGia>();
+            this.ThongTinThanhToans = new HashSet<ThongTinThanhToan>();
+            this.TraLoiBinhLuans = new HashSet<TraLoiBinhLuan>();
         }
     
         public int MaNguoiDung { get; set; }
@@ -32,12 +32,12 @@ namespace WebsiteBanQuanAo.Models
         public string GioiTinhNguoiDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinThanhToan> ThongTinThanhToans { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BinhLuan> BinhLuans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TraLoiBinhLuan> TraLoiBinhLuans { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhGia> DanhGias { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThongTinThanhToan> ThongTinThanhToans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TraLoiBinhLuan> TraLoiBinhLuans { get; set; }
     }
 }
