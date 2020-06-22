@@ -2683,6 +2683,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\DataWebsiteBanQuanAo\" />
     <Folder Include="Views\AdminDangXuat\" />
     <Folder Include="Views\DangXuat\" />
   </ItemGroup>
