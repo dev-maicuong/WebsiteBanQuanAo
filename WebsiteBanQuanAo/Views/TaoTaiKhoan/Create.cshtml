@@ -44,28 +44,29 @@
                             <input type="password" value="Confirm Password" name="NhapLaiMatKhau" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="">
                             <div class="clearfix"></div>
                         </div>
-                        <div>
-                            <i>Địa chỉ người dùng</i>
-                            <input type="text" name="DiaChiNguoiDung" class="clearfix">
-                        </div>
-                        <div >
-                            <i >Số điện thoại</i>
-                            <input type="number" value="Số điện thoại người dùng" name="SDTNguoiDung">
+                        <div class="key">
+                            <i class="fa fa-address-book" aria-hidden="true"></i>
+                            <input type="text" name="DiaChiNguoiDung" value="Địa chỉ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Địa chỉ';}" required="">
                             <div class="clearfix"></div>
                         </div>
-                        <div >
+                        <div class="key">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input type="text" value="Số điện thoại người dùng" name="SDTNguoiDung" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Số điện thoại';}" required="">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div>
                             <i>Nam</i>
                             <input type="radio" value="Nam" name="GioiTinhNguoiDung">
                             <div class="clearfix"></div>
                         </div>
-                        <div >
+                        <div>
                             <i>Nữ</i>
                             <input type="radio" value="Nữ" name="GioiTinhNguoiDung">
                             <div class="clearfix"></div>
                         </div>
-                        <div >
+                        <div>
                             <i>Khác</i>
-                            <input type="radio" value="Khác" name="GioiTinhNguoiDung" >
+                            <input type="radio" value="Khác" name="GioiTinhNguoiDung">
                             <div class="clearfix"></div>
                         </div>
                         <input type="submit" value="Đăng ký">

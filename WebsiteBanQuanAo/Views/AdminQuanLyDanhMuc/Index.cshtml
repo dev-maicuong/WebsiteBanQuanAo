@@ -32,15 +32,29 @@
                 @Html.DisplayFor(modelItem => item.TenDanhMuc)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GioiTinh)
+                @if (item.GioiTinh == false)
+                {
+                    <b>Nữ</b>
+                }
+                else
+                {
+                    <b>Nam</b>
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AoOrQuan)
+                @if (item.AoOrQuan == true)
+                {
+                    <b>Áo</b>
+                }
+                else
+                {
+                    <b>Quần</b>
+                }
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaDanhMuc }) |
+                <a href="@Url.Action("Edit", "AdminQuanLyDanhMuc", new { id = item.MaDanhMuc })"><i class="fa fa-edit"></i></a> |
                 <a href="#" data-toggle="modal" data-target="#@iddanhmuc@item.MaDanhMuc"><i class="fa fa-eye"></i></a> |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaDanhMuc })
+                <a href="@Url.Action("Delete", "AdminQuanLyDanhMuc", new { id = item.MaDanhMuc })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <div class="modal fade" id="@iddanhmuc@item.MaDanhMuc" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -53,10 +67,25 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @item.TenDanhMuc<br />
-                        @item.GioiTinh<br />
-                        @item.AoOrQuan
-                        <img src="~/Content/LayoutAdmin/images/" />
+                        <pre style="font-size: 15px; font-family: Arial">
+                        @item.TenDanhMuc
+                        @if(item.AoOrQuan == true)
+                        {
+                        <b>Loại : Áo</b>
+                        }
+                        else
+                        {
+                        <b>Loại : Quần.</b>
+                        }
+                        @if(item.GioiTinh == true)
+                        {
+                        <b>Giới tính : Nam.</b>
+                        }
+                        else
+                        {
+                        <b>Giới tính : Nữ</b>
+                        }
+</pre>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

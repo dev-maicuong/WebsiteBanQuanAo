@@ -35,69 +35,6 @@ namespace WebsiteBanQuanAo.Controllers
             }
             return View(danhGia);
         }
-
-        // GET: AdminQuanLyDanhGia/Create
-        public ActionResult Create()
-        {
-            ViewBag.MaNguoiDung = new SelectList(db.tbNguoiDungs, "MaNguoiDung", "TaiKhoanNguoiDung");
-            ViewBag.MaSanPham = new SelectList(db.tbSanPhams, "MaSanPham", "TenSanPham");
-            return View();
-        }
-
-        // POST: AdminQuanLyDanhGia/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaDanhGia,DanhGia1,MaNguoiDung,MaSanPham,NgayDanhGia")] DanhGia danhGia)
-        {
-            if (ModelState.IsValid)
-            {
-                db.DanhGias.Add(danhGia);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.MaNguoiDung = new SelectList(db.tbNguoiDungs, "MaNguoiDung", "TaiKhoanNguoiDung", danhGia.MaNguoiDung);
-            ViewBag.MaSanPham = new SelectList(db.tbSanPhams, "MaSanPham", "TenSanPham", danhGia.MaSanPham);
-            return View(danhGia);
-        }
-
-        // GET: AdminQuanLyDanhGia/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DanhGia danhGia = db.DanhGias.Find(id);
-            if (danhGia == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.MaNguoiDung = new SelectList(db.tbNguoiDungs, "MaNguoiDung", "TaiKhoanNguoiDung", danhGia.MaNguoiDung);
-            ViewBag.MaSanPham = new SelectList(db.tbSanPhams, "MaSanPham", "TenSanPham", danhGia.MaSanPham);
-            return View(danhGia);
-        }
-
-        // POST: AdminQuanLyDanhGia/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaDanhGia,DanhGia1,MaNguoiDung,MaSanPham,NgayDanhGia")] DanhGia danhGia)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(danhGia).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.MaNguoiDung = new SelectList(db.tbNguoiDungs, "MaNguoiDung", "TaiKhoanNguoiDung", danhGia.MaNguoiDung);
-            ViewBag.MaSanPham = new SelectList(db.tbSanPhams, "MaSanPham", "TenSanPham", danhGia.MaSanPham);
-            return View(danhGia);
-        }
-
         // GET: AdminQuanLyDanhGia/Delete/5
         public ActionResult Delete(int? id)
         {

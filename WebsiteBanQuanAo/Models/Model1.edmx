@@ -61,6 +61,7 @@
           <Property Name="DiaChiNguoiDung" Type="nvarchar" MaxLength="100" />
           <Property Name="SDTNguoiDung" Type="int" />
           <Property Name="GioiTinhNguoiDung" Type="nvarchar" MaxLength="10" />
+          <Property Name="Token" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="tbSanPham">
           <Key>
@@ -351,6 +352,7 @@
           <NavigationProperty Name="DanhGias" Relationship="Self.FK_DanhGia_tbNguoiDung1" FromRole="tbNguoiDung" ToRole="DanhGia" />
           <NavigationProperty Name="ThongTinThanhToans" Relationship="Self.FK_ThongTinThanhToan_tbNguoiDung" FromRole="tbNguoiDung" ToRole="ThongTinThanhToan" />
           <NavigationProperty Name="TraLoiBinhLuans" Relationship="Self.FK_TraLoiBinhLuan_tbNguoiDung" FromRole="tbNguoiDung" ToRole="TraLoiBinhLuan" />
+          <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbSanPham">
           <Key>
@@ -636,6 +638,7 @@
           <EntitySetMapping Name="tbNguoiDungs">
             <EntityTypeMapping TypeName="DatabaseBanQuanAoModel.tbNguoiDung">
               <MappingFragment StoreEntitySet="tbNguoiDung">
+                <ScalarProperty Name="Token" ColumnName="Token" />
                 <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
                 <ScalarProperty Name="TaiKhoanNguoiDung" ColumnName="TaiKhoanNguoiDung" />
                 <ScalarProperty Name="MatKhauNguoiDung" ColumnName="MatKhauNguoiDung" />

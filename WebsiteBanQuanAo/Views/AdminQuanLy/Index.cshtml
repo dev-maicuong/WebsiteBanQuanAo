@@ -6,8 +6,6 @@
     var idadmin = "idadmin";
 }
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Tạo", "Create")
 </p>
@@ -32,9 +30,9 @@
                 @Html.DisplayFor(modelItem => item.MatKhauAdmin)
             </td>
             <td>
-                <a href="@Url.Action("Edit", "AdminQuanLy", new { id = item.MaAdmin })"><i class="fa fa-edit" ></i></a> |
+                <a href="@Url.Action("Edit", "AdminQuanLy", new { id = item.MaAdmin })"><i class="fa fa-edit"></i></a> |
                 <a href="#" data-toggle="modal" data-target="#@idadmin@item.MaAdmin"><i class="fa fa-eye"></i></a> |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaAdmin })
+                <a href="@Url.Action("Delete", "AdminQuanLy", new { id = item.MaAdmin })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <div class="modal fade" id="@idadmin@item.MaAdmin" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -49,8 +47,6 @@
                     <div class="modal-body">
                         @item.TaiKhoanAdmin<br />
                         @item.MatKhauAdmin<br />
-                        @item.MaAdmin
-                        <img src="~/Content/LayoutAdmin/images/" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

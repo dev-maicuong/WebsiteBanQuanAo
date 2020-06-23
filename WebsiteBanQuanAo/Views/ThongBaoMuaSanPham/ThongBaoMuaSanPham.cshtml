@@ -1,0 +1,8 @@
+﻿@using WebsiteBanQuanAo.Models;
+@model List<CTDatHang>
+    <marquee>
+        @foreach (var item in Model)
+        {
+        <span> @item.ThongTinThanhToan.TenNguoiDung vừa mua sản phẩm @item.tbSanPham.TenSanPham ------ </span>
+        }
+    </marquee>

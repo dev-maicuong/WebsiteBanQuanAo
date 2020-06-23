@@ -163,12 +163,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\QuenMatKhauController.cs" />
     <Compile Include="Controllers\SanPhamDuocMuaNhieuNhatController.cs" />
     <Compile Include="Controllers\TaoTaiKhoanController.cs" />
     <Compile Include="Controllers\tbNguoiDungs1Controller.cs" />
     <Compile Include="Controllers\tbNguoiDungsController.cs" />
     <Compile Include="Controllers\tbSanPhamsController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
+    <Compile Include="Controllers\ThongBaoMuaSanPhamController.cs" />
     <Compile Include="Controllers\ThongTinThanhToansController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TrangCaNhanController.cs" />
@@ -180,6 +182,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClassGioHangTamThoi.cs" />
+    <Compile Include="Models\ClassQuenMatKhau.cs" />
     <Compile Include="Models\CTDatHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2557,10 +2560,6 @@
     <Content Include="Views\XemChiTiet\XemChiTietSanPham.cshtml" />
     <Content Include="Views\DangNhap\DangNhap.cshtml" />
     <Content Include="Views\TaoTaiKhoan\Create.cshtml" />
-    <Content Include="Views\TaoTaiKhoan\Delete.cshtml" />
-    <Content Include="Views\TaoTaiKhoan\Details.cshtml" />
-    <Content Include="Views\TaoTaiKhoan\Edit.cshtml" />
-    <Content Include="Views\TaoTaiKhoan\Index.cshtml" />
     <Content Include="Views\Loc\DanhMucNam.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\DemSanPhamNu\DemSanPhamNu.cshtml" />
@@ -2604,15 +2603,11 @@
     <Content Include="Views\AdminQuanLyNguoiDung\Details.cshtml" />
     <Content Include="Views\AdminQuanLyNguoiDung\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyNguoiDung\Index.cshtml" />
-    <Content Include="Views\AdminQuanLyDatHang\Create.cshtml" />
     <Content Include="Views\AdminQuanLyDatHang\Delete.cshtml" />
     <Content Include="Views\AdminQuanLyDatHang\Details.cshtml" />
-    <Content Include="Views\AdminQuanLyDatHang\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyDatHang\Index.cshtml" />
-    <Content Include="Views\AdminQuanLyTTTT\Create.cshtml" />
     <Content Include="Views\AdminQuanLyTTTT\Delete.cshtml" />
     <Content Include="Views\AdminQuanLyTTTT\Details.cshtml" />
-    <Content Include="Views\AdminQuanLyTTTT\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyTTTT\Index.cshtml" />
     <Content Include="Views\AdminQuanLyDanhMuc\Create.cshtml" />
     <Content Include="Views\AdminQuanLyDanhMuc\Delete.cshtml" />
@@ -2665,21 +2660,18 @@
     <Content Include="Views\HienThi\QuanNuDuocMuaNhieuNhat.cshtml" />
     <Content Include="Views\HienThi\AoNamDuocMuaNhieuNhat.cshtml" />
     <Content Include="Views\HienThi\QuanNamDuocMuaNhieuNhat.cshtml" />
-    <Content Include="Views\AdminQuanLyBinhLuan\Create.cshtml" />
     <Content Include="Views\AdminQuanLyBinhLuan\Delete.cshtml" />
     <Content Include="Views\AdminQuanLyBinhLuan\Details.cshtml" />
-    <Content Include="Views\AdminQuanLyBinhLuan\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyBinhLuan\Index.cshtml" />
-    <Content Include="Views\AdminQuanLyTraLoi\Create.cshtml" />
     <Content Include="Views\AdminQuanLyTraLoi\Delete.cshtml" />
     <Content Include="Views\AdminQuanLyTraLoi\Details.cshtml" />
-    <Content Include="Views\AdminQuanLyTraLoi\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyTraLoi\Index.cshtml" />
-    <Content Include="Views\AdminQuanLyDanhGia\Create.cshtml" />
     <Content Include="Views\AdminQuanLyDanhGia\Delete.cshtml" />
     <Content Include="Views\AdminQuanLyDanhGia\Details.cshtml" />
-    <Content Include="Views\AdminQuanLyDanhGia\Edit.cshtml" />
     <Content Include="Views\AdminQuanLyDanhGia\Index.cshtml" />
+    <Content Include="Views\ThongBaoMuaSanPham\ThongBaoMuaSanPham.cshtml" />
+    <Content Include="Views\QuenMatKhau\QuenMatKhau.cshtml" />
+    <Content Include="Views\QuenMatKhau\ThayDoiMatKhau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

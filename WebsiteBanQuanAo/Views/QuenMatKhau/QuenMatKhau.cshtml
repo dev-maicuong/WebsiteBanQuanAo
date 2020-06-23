@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "QuenMatKhau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login">
+    <div class="main-agileits">
+        <div class="form-w3agile form1">
+            <i><b>Nhập Email đăng ký của bạn. Vui lòng vào Email để thực hiện đổi mật khẩu. </b></i>
+            <form action="/QuenMatKhau/GuiEmail" method="post">
+                <div class="key">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="text" value="Email" name="EmailNhan" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <input type="submit" value="Gửi" />
+            </form>
+        </div>
+
+    </div>
+</div>
+

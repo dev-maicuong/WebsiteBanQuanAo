@@ -6,11 +6,6 @@
     var idtttt = "idtttt";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Tạo", "Create")
-</p>
 <table class="table table-bordered table-striped table-hover">
     <tr class="bg-danger text-white">
         <th>
@@ -50,9 +45,8 @@
                 @Html.DisplayFor(modelItem => item.NgayNhanSanPham)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaTTTT }) |
                 <a href="#" data-toggle="modal" data-target="#@idtttt@item.MaTTTT"><i class="fa fa-eye"></i></a>
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaTTTT })
+                <a href="@Url.Action("Delete", "AdminQuanLyTTTT", new { id = item.MaTTTT })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <div class="modal fade" id="@idtttt@item.MaTTTT" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -65,17 +59,18 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @item.TenNguoiDung<br />
-                        @item.DiaChiNguoiDung<br />
-                        @item.SDTNguoiDung<br />
-                        @item.GioiTinhNguoiDung<br />
-                        @item.NgayNhanSanPham<br />
-                        @item.SoLuong<br />
-                        @item.TongTien<br />
+                        <pre style="font-size: 15px; font-family: Arial">
+                        Tên : @item.TenNguoiDung
+                        Địa chỉ : @item.tbNguoiDung.DiaChiNguoiDung
+                        SDT : @item.SDTNguoiDung
+                        Giới tính : @item.GioiTinhNguoiDung
+                        Ngày Nhận : @item.NgayNhanSanPham
+                        Số lượng : @item.SoLuong
+                        Tổng tiền : @item.TongTien
+</pre>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
                     </div>
                 </div>
             </div>

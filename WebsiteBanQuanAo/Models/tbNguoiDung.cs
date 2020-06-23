@@ -30,6 +30,7 @@ namespace WebsiteBanQuanAo.Models
         public string DiaChiNguoiDung { get; set; }
         public Nullable<int> SDTNguoiDung { get; set; }
         public string GioiTinhNguoiDung { get; set; }
+        public string Token { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BinhLuan> BinhLuans { get; set; }

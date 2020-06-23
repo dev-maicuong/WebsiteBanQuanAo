@@ -67,6 +67,9 @@ namespace WebsiteBanQuanAo.Controllers
             {
                 fileUpload.SaveAs(pa);
             }
+            tbSanPham.NgayTao = DateTime.Now;
+            tbSanPham.LuotXem = 0;
+            tbSanPham.LuongMua = 0;
             db.tbSanPhams.Add(tbSanPham);
             tbSanPham.AnhMatTruoc = fileUpload.FileName;
             db.SaveChanges();

@@ -3,6 +3,8 @@
 
 @foreach (var item in Model)
 {
+    float giasp = (float)item.GiaSanPham;
+    float giakm = (float)item.GiaKhuyenMai;
         <div class="recent-grids">
             <a href="@Url.Action("XemChiTietSanPham","XemChiTiet", new {masanpham = item.MaSanPham })">
                 <div class="recent-left">
@@ -13,7 +15,7 @@
                     <div class="block">
                         @Html.Action("DanhGia2", "DanhGia2", new { masanpham = item.MaSanPham })
                     </div>
-                    <span class=" price-in1">@item.GiaSanPham</span>
+                    <p><del>@giakm.ToString("#,##0") VNĐ. </del><em class="item_price">@giasp.ToString("#,##0") VNĐ.</em></p>
                 </div>
             </a>
             <div class="clearfix"> </div>

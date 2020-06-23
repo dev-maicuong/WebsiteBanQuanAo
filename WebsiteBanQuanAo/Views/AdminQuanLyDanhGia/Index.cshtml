@@ -5,12 +5,7 @@
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" class="table table-bordered table-striped table-hover">
+<table class="table table-bordered table-striped table-hover">
     <tr class="bg-danger text-white">
         <th>
             @Html.DisplayNameFor(model => model.DanhGia1)
@@ -36,9 +31,8 @@
             @Html.DisplayFor(modelItem => item.tbSanPham.TenSanPham)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDanhGia }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDanhGia }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDanhGia })
+            <a href="@Url.Action("Details", "AdminQuanLyDanhGia", new { id = item.MaDanhGia })"><i class="fas fa-eye"></i></a> |
+            <a href="@Url.Action("Delete", "AdminQuanLyDanhGia", new { id = item.MaDanhGia })"><i class="fas fa-trash-alt"></i></a>
         </td>
     </tr>
 }

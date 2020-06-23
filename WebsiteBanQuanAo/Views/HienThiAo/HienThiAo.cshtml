@@ -36,6 +36,8 @@
                         <div class="">
                             @foreach (var item in Model)
                             {
+                                float giasp = (float)item.GiaSanPham;
+                                float giakm = (float)item.GiaKhuyenMai;
                                 <div class="col-md-3 arrival-grid simpleCart_shelfItem" style="margin-top: 1%;">
                                     <div class="grid-arr">
                                         <div class="grid-arrival">
@@ -68,7 +70,7 @@
                                         <div class="women" style="width">
                                             <h6 style="width: 100%; height: 50px"><a href="single.html" style="width: 100%; height: 60px">@item.TenSanPham</a></h6>
                                             <span class="size">@item.KichThuocSanPham </span>
-                                            <p><del>@item.GiaKhuyenMai </del><em class="item_price">@item.GiaSanPham VND</em></p>
+                                            <p><del>@giakm.ToString("#,##0") VNĐ. </del><em class="item_price">@giasp.ToString("#,##0") VNĐ.</em></p>
                                             <a href="@Url.Action("ThemVaoGioHang","GioHang", new { masanpham = item.MaSanPham})" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ</a>
                                         </div>
                                     </div>

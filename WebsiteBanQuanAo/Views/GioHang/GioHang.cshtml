@@ -21,10 +21,10 @@ else
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th class="text-center">Giá</th>
+                        <th class="text-center">Tổng giá</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -35,11 +35,9 @@ else
                         <tr>
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
-                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="~/Content/Layout/images/@item.AnhMatTruoc" style="width: 72px; height: 72px;"> </a>
                                     <div class="media-body">
                                         <h4 class="media-heading"><a href="#">@item.TenSanPham</a></h4>
-                                        <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
                                     </div>
                                 </div>
                             </td>
@@ -67,14 +65,14 @@ else
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                        <td><h5>---</h5></td>
+                        <td class="text-right"><h5><strong>---</strong></h5></td>
                     </tr>
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
+                        <td><h5>Số lượng</h5></td>
                         <td class="text-right"><h5><strong>@Model.Sum(n => n.SoLuong).ToString("#,##0").Replace(',', '.')</strong></h5></td>
                     </tr>
                     <tr>
@@ -89,9 +87,6 @@ else
                         <td>   </td>
                         <td>   </td>
                         <td>
-                            <button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                            </button>
                         </td>
                         <td>
 

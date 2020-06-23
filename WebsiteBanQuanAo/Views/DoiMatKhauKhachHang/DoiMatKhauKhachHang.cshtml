@@ -12,43 +12,44 @@
         @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>tbNguoiDung</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MaNguoiDung)
+    <div class="form-group">
+        @Html.Raw(ViewBag.ThongBao)
+        <div class="content">
+            <!--login-->
+            <div class="login">
+                <div class="main-agileits">
+                    <div class="form-w3agile">
+                        <h3>Đổi mật khẩu.</h3>
+                        <div class="key">
+                            <i class="fa fa-lock" aria-hidden="true"> Mật khẩu cũ</i>
+                            <input type="password" value="Password" name="cu" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="key">
+                            <i class="fa fa-lock" aria-hidden="true">Mật khẩu mới</i>
+                            <input type="password" value="Password" name="MatKhauNguoiDung" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="key">
+                            <i class="fa fa-lock" aria-hidden="true">Nhập lại mật khẩu mới</i>
+                            <input type="password" value="Password" name="NhapLai" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Oke" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.Raw(ViewBag.ThongBao)
-            <b>Mat Khau cu</b><br />
-            <div class="col-md-10">
-               <input type="password" name="cu" class="form-control" />
             </div>
-            <br />
-            <b>Mat Khau</b>
-            <br />
-            <div class="col-md-10">
-                <input type="password" name="MatKhauNguoiDung" class="form-control" />
-            </div>
+            <!--login-->
         </div>
-        <div class="form-group">
-            <br />
-            <b>Xac nhan Mat Khau</b><br />
-            <div class="col-md-10">
-                <input type="password" name="NhapLai" class="form-control" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+    </div>
     </div>
     }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 }
 else
 {

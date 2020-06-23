@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.GioiTinhNguoiDung)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaNguoiDung }) |
+                <a href="@Url.Action("Edit", "AdminQuanLyNguoiDung", new { id = item.MaNguoiDung })"><i class="fa fa-edit"></i></a> |
                 <a href="#" data-toggle="modal" data-target="#@idnguoidung@item.MaNguoiDung"><i class="fa fa-eye"></i></a>|
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaNguoiDung })
+                <a href="@Url.Action("Delete", "AdminQuanLyNguoiDung", new { id = item.MaNguoiDung })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <div class="modal fade" id="@idnguoidung@item.MaNguoiDung" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -59,8 +59,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @item.TenNguoiDung
-                        <img src="~/Content/LayoutAdmin/images/" />
+                        <pre style="font-size: 15px; font-family: Arial">
+@item.TenNguoiDung
+@item.TaiKhoanNguoiDung
+@item.MatKhauNguoiDung
+@item.MatKhauNguoiDung
+@item.DiaChiNguoiDung
+@item.SDTNguoiDung
+@item.GioiTinhNguoiDung
+@item.Token
+</pre>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

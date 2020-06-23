@@ -6,11 +6,6 @@
     var idctdathang = "idctdathang";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Tạo", "Create")
-</p>
 <table class="table table-bordered table-striped table-hover">
     <tr class="bg-danger text-white">
         <th>
@@ -32,9 +27,8 @@
                 @Html.DisplayFor(modelItem => item.ThongTinThanhToan.TenNguoiDung)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaCTDatHang }) |
                 <a href="#" data-toggle="modal" data-target="#@idctdathang@item.MaCTDatHang"><i class="fa fa-eye"></i></a> |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaCTDatHang })
+                <a href="@Url.Action("Delete", "AdminQuanLyDatHang", new { id = item.MaCTDatHang })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <div class="modal fade" id="@idctdathang@item.MaCTDatHang" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -47,13 +41,17 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @item.tbSanPham.TenSanPham<br />
-                        @item.ThongTinThanhToan.TenNguoiDung
-                        <img src="~/Content/LayoutAdmin/images/" />
+                        <pre style="font-size: 15px; font-family: Arial">
+@item.tbSanPham.TenSanPham
+@item.ThongTinThanhToan.TenNguoiDung
+@item.ThongTinThanhToan.tbNguoiDung.DiaChiNguoiDung
+@item.ThongTinThanhToan.tbNguoiDung.SDTNguoiDung
+@item.ThongTinThanhToan.tbNguoiDung.GioiTinhNguoiDung
+</pre>
+                        <img src="~/Content/Layout/images/@item.tbSanPham.AnhMatTruoc"
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
                     </div>
                 </div>
             </div>

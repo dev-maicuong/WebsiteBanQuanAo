@@ -1,0 +1,38 @@
+﻿@model WebsiteBanQuanAo.Models.tbNguoiDung
+@using WebsiteBanQuanAo.Models;
+
+@{
+    ViewBag.Title = "ThayDoiMatKhau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="main-agileits">
+        <div class="form-w3agile form1">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MaNguoiDung)
+            <b>Vui lòng nhập mật khẩu mới.</b><hr />
+            <div class="key">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" value="Email" name="mkmoi" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                <div class="clearfix"></div>
+            </div>
+            <div class="key">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" value="Email" name="xnmk" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                <div class="clearfix"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Xong" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+        @ViewBag.thongbao
+    }

@@ -29,42 +29,20 @@
                             <div class="block">
                                 @Html.Action("DanhGia2", "DanhGia2", new { masanpham = Model.MaSanPham })
                             </div>
-                            <p class="price item_price">@Model.GiaSanPham</p>
+                            @{ 
+                                float gia = (float)Model.GiaSanPham;
+                             }
+                            <p class="price item_price">@gia.ToString("#,##0") VNĐ.</p>
                             <div class="description">
-                                <p><span>Mô tả : </span>@Model.MoTaSanPham.</p>
-                            </div>
-                            <div class="color-quality">
-                                <h6>Số lượng :</h6>
-                                <div class="quantity">
-                                    <div class="quantity-select">
-                                        <div class="entry value-minus1">&nbsp;</div>
-                                        <div class="entry value1"><span>1</span></div>
-                                        <div class="entry value-plus1 active">&nbsp;</div>
-                                    </div>
-                                </div>
-                                <!--quantity-->
-                                <script>
-                                    $('.value-plus1').on('click', function () {
-                                        var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10) + 1;
-                                        divUpd.text(newVal);
-                                    });
-
-                                    $('.value-minus1').on('click', function () {
-                                        var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10) - 1;
-                                        if (newVal >= 1) divUpd.text(newVal);
-                                    });
-                                </script>
-                                <!--quantity-->
+                                <p><span>Mô tả : </span>@Model.MoTaSanPham</p>
                             </div>
                             <div class="women">
-                                <span class="size">@Model.KichThuocSanPham </span>
+                                <span class="size">Size: @Model.KichThuocSanPham </span>
                                 <a href="@Url.Action("ThemVaoGioHang","GioHang", new { masanpham =Model.MaSanPham})" data-text="Add To Cart" class="my-cart-b item_add">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="social-icon">
-                                <a href="#"><i class="icon"></i></a>
-                                <a href="#"><i class="icon1"></i></a>
-                                <a href="#"><i class="icon2"></i></a>
-                                <a href="#"><i class="icon3"></i></a>
+                                <a href="https://www.facebook.com/hoangmaicuong.99"><i class="icon"></i></a>
+                                    
                             </div>
                         </div>
                         <div class="clearfix"> </div>
