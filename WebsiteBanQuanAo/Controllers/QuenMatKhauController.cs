@@ -35,7 +35,6 @@ namespace WebsiteBanQuanAo.Controllers
                 // Nội dung gửi.
                 WebMail.From = "cuongembaubang@gmail.com";
                 tbNguoiDung nd = dt.tbNguoiDungs.SingleOrDefault(n => n.TaiKhoanNguoiDung == quenmk.EmailNhan);
-                Session["MaEmail"] = nd.Token;
                 quenmk.ChuDe = "Xác nhận mật khẩu Web ";
                 quenmk.NoiDung = "Xác Nhận : https://localhost:44345/QuenMatKhau/ThayDoiMatKhau?id=" + nd.MaNguoiDung + "&Token=" + nd.Token;
                 //Gửi gmail.

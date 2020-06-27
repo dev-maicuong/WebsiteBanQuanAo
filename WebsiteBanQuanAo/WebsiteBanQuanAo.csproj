@@ -2330,6 +2330,7 @@
     <Content Include="Content\Layout\js\responsiveslides.min.js" />
     <Content Include="Content\Layout\js\simpleCart.min.js" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\TinhChinh.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

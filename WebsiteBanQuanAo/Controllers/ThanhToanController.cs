@@ -10,6 +10,7 @@ namespace WebsiteBanQuanAo.Controllers
     public class ThanhToanController : Controller
     {
         DatabaseBanQuanAoEntities dt = new DatabaseBanQuanAoEntities();
+        
         // GET: ThanhToan
         public ActionResult ThongTinThanhToan()
         {
@@ -42,16 +43,24 @@ namespace WebsiteBanQuanAo.Controllers
         }
         public RedirectToRouteResult CTDatHang(int MaTTTT)
         {
+            int ma;
             List<ClassGioHangTamThoi> giohangtamthoi = Session["GioHangTamThoi"] as List<ClassGioHangTamThoi>;
             foreach (var item in giohangtamthoi)
             {
                 CTDatHang dh = new CTDatHang();
                 dh.MaTTTT = MaTTTT;
                 dh.MaSanPham = item.MaSanPham;
+                ma = item.MaSanPham;
                 dt.CTDatHangs.Add(dh);
+                dt.tbSanPhams.Find(item.MaSanPham).LuongMua = demluotmua(item.MaSanPham);
             }
             dt.SaveChanges();
             return RedirectToAction("XacNhan");
+        }
+        public int demluotmua(int ? masanpham)
+        {
+            int dem = (int)dt.CTDatHangs.Where(n => n.MaSanPham == masanpham).Sum(t => t.ThongTinThanhToan.SoLuong);
+            return dem;
         }
         public ActionResult XacNhan()
         {
