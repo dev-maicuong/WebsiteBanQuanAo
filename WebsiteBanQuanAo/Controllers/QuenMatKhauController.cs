@@ -36,7 +36,7 @@ namespace WebsiteBanQuanAo.Controllers
                 WebMail.From = "cuongembaubang@gmail.com";
                 tbNguoiDung nd = dt.tbNguoiDungs.SingleOrDefault(n => n.TaiKhoanNguoiDung == quenmk.EmailNhan);
                 quenmk.ChuDe = "Xác nhận mật khẩu Web ";
-                quenmk.NoiDung = "Xác Nhận : https://localhost:44345/QuenMatKhau/ThayDoiMatKhau?id=" + nd.MaNguoiDung + "&Token=" + nd.Token;
+                quenmk.NoiDung = "Xác Nhận: http://luxury2.somee.com/QuenMatKhau/ThayDoiMatKhau?id=" + nd.MaNguoiDung + "&Token=" + nd.Token;
                 //Gửi gmail.
                 WebMail.Send(to: quenmk.EmailNhan, subject: quenmk.ChuDe, body: quenmk.NoiDung, isBodyHtml: true);
                 ViewBag.thongbao = "Gmail được gửi thành công";
@@ -49,12 +49,12 @@ namespace WebsiteBanQuanAo.Controllers
         }
         public ActionResult ThayDoiMatKhau(int? id, string Token)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tbNguoiDung nd = dt.tbNguoiDungs.Find(id);
-            if(Token != nd.Token)
+            if (Token != nd.Token)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -63,9 +63,9 @@ namespace WebsiteBanQuanAo.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ThayDoiMatKhau( String mkmoi,String xnmk,int ? id)
+        public ActionResult ThayDoiMatKhau(String mkmoi, String xnmk, int? id)
         {
-            if(mkmoi != xnmk)
+            if (mkmoi != xnmk)
             {
                 ViewBag.thong = "sai nhập lại";
                 return View();
